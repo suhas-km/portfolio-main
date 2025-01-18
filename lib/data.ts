@@ -5,6 +5,10 @@ import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
+import { FaLaptopCode } from "react-icons/fa";
+import { BiCodeBlock } from "react-icons/bi";
+import { SiNextdotjs } from "react-icons/si";
+import scorepointImg from "@/public/scorepoint.png";
 
 export const links = [
   {
@@ -35,73 +39,107 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Graduate Teaching Assistent",
+    location: "Northeastern University",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "Assisted Professor with Data Science Course",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "January 2025 - May 2025",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Cloud Engineer Intern",
+    location: "Safecast",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+      "Worked on analysing and reducing AWS Costs, helped in migrating to new backend design, documented infrastructure",
+    icon: React.createElement(FaLaptopCode),
+    date: "May 2024 - January 2025",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Software Engineer",
+    location: "Runway Proptech LLC",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+      "I worked a backend software engineer. My stack includes Python, AWS, Microservices, RESTful APIs, SQL DB, Agile and AI Integration.",
+    icon: React.createElement(FaLaptopCode),
+    date: "August 2022 - September 2023",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "QueryMaster AI",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "AI app to achieve over 90% accuracy in translating natural language into SQL queries, enhancing data accessibility for non-technical users.",
+    tags: ["LLM", "SQLite", "Prompt Engineering", "LangChain", "Docker", "Agentic AI"],
+    imageUrl: wordanalyticsImg,
+  },
+  {
+    title: "SafeHouseSeeker AI",
+    description:
+      "SafeHouseFinder AI: Built during aiXplain's Hackathon, this tool provides personalized housing recommendations using AI and geospatial tech. Contributed as a full-stack developer to design and implement the app.",
+    tags: ["AI Agents", "Pinecone", "OpenAI", "Geospatial Mapping", "aiXplain"],
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "MatchPoint: The Resume Analyst",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+      "Developed a resume scoring app using React, FastAPI, and Llama models, with Dockerized deployment on AWS ECS for scalability, providing real-time NLP-based feedback and improvement suggestions",
+    tags: ["React", "FastAPI", "AWS ECS", "Llama Model", "Docker", "Agentic AI"],
+    imageUrl: scorepointImg,
   },
   {
-    title: "Word Analytics",
+    title: "Nutrition Tracking Database",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+      "Developed a Nutrition Tracking System with SQL Server, Tableau dashboards, and secure handling of user-specific dietary and fitness data.",
+    tags: ["TSQL", "Database Design", "SQL Server", "Tableau", "Data Security"],
+    imageUrl: rmtdevImg,
   },
+  
+  // {
+  //   title: "GeoGaurd",
+  //   description:
+  //     "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+  //   tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+  //   imageUrl: rmtdevImg,
+  // },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
+  "Java",
   "Python",
-  "Django",
-  "Framer Motion",
+  "Go",
+  "SQL",
+  "R",
+  "React",
+  "Node.js",
+  "Spring Boot",
+  "FastAPI",
+  "Flask",
+  "Docker",
+  "Kubernetes",
+  "AWS",
+  "GCP",
+  "Azure",
+  "PostgreSQL",
+  "MongoDB",
+  "Elasticsearch",
+  "Redis",
+  "Apache Spark",
+  "Kafka",
+  "scikit-learn",
+  "PyTorch",
+  "TensorFlow",
+  "NLP",
+  "CI/CD",
+  "Git",
+  "Terraform",
+  "Prometheus",
+  "Grafana",
+  "Tableau",
+  "Power BI",
+  "LangChain",
+  "OpenAI",
+  "Pinecone",
+  "MLOps",
+  "Data Analytics",
 ] as const;
+

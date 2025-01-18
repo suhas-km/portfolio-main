@@ -1,0 +1,13 @@
+{
+  "node": {
+    "74e9ed1cb76a0968043141b61b0a32007dfd2a40": {
+      "workers": {
+        "app/page": "(sc_action)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsuhaskm%2FDocuments%2FMy%20Mac%2FResumes%2FNEW%20Portfolio%2Fportfolio-website%2Factions%2FsendEmail.ts%22%2C%5B%22sendEmail%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "sc_action"
+      }
+    }
+  },
+  "edge": {}
+}

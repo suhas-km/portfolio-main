@@ -19,21 +19,19 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Accounting</span>, I decided to pursue my
-        passion for programming. I enrolled in a coding bootcamp and learned{" "}
-        <span className="font-medium">full-stack web development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
-        </span>
-        . I am also familiar with TypeScript and Prisma. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer.
+      After graduating with a degree in{" "}
+      <span className="font-medium">Information Systems</span>, I honed my skills in
+      <span className="font-medium">software development, databases, data science, and machine learning</span>. 
+      <span className="italic">My favorite part of this field</span> is creating intelligent systems that solve real-world problems. 
+      I <span className="underline">enjoy</span> building scalable, efficient applications and continuously improving their performance. 
+      My core stack includes{" "}
+      <span className="font-medium">
+        AWS, React, Python, Java, and Spring Boot
+      </span>
+      . I am also skilled in SQL, Machine Learning, and deploying cloud-native solutions. 
+      I am passionate about leveraging technology to make impactful contributions and am always eager to learn and adapt. 
+      I am currently looking for a{" "}
+      <span className="font-medium">full-time position</span> as a software engineer or in an AI-focused role.
       </p>
 
       <p>
