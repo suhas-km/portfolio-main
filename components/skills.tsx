@@ -42,11 +42,27 @@ export default function Skills() {
             <ul className="flex flex-wrap justify-center gap-2 text-base text-gray-800">
               {skills.map((skill, index) => (
                 <motion.li
-                  className="bg-white borderBlack rounded-lg px-4 py-2 dark:bg-white/10 dark:text-white/80"
-                  key={index}
-                  variants={fadeInAnimationVariants}
+                  className="bg-white borderBlack rounded-lg px-4 py-2 dark:bg-white/10 dark:text-white/80 
+                    hover:bg-gradient-to-r hover:from-[#FF2D55] hover:to-[#FF3B30] hover:text-white
+                    transform transition-all duration-200 ease-out
+                    hover:shadow-2xl hover:shadow-red-500/40 cursor-default
+                    relative hover:z-20"
+                  style={{
+                    transformStyle: 'preserve-3d',
+                  }}
+                  whileHover={{
+                    scale: 1.1,
+                    y: -12,
+                    rotateX: 8,
+                    rotateY: 0,
+                    transition: {
+                      duration: 0.15,
+                      ease: [0.3, 0.7, 0.4, 1]
+                    }
+                  }}
                   initial="initial"
                   whileInView="animate"
+                  variants={fadeInAnimationVariants}
                   viewport={{
                     once: true,
                   }}

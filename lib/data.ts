@@ -73,24 +73,24 @@ export const projectsData = [
     imageUrl: wordanalyticsImg,
   },
   {
-    title: "SafeHouseSeeker AI",
+    title: "DC SafeHouseSeeker AI",
     description:
-      "SafeHouseFinder AI: Built during aiXplain's Hackathon, this tool provides personalized housing recommendations using AI and geospatial tech. Contributed as a full-stack developer to design and implement the app.",
-    tags: ["AI Agents", "Pinecone", "OpenAI", "Geospatial Mapping", "aiXplain"],
+      "DC SafeHouseFinder AI: Built during aiXplain's Hackathon, provides personalized housing recommendations using AI and geospatial tech.",
+    tags: ["AI Agents", "Vector DB", "aiXplain"],
     imageUrl: corpcommentImg,
   },
   {
     title: "MatchPoint: The Resume Analyst",
     description:
-      "Developed a resume scoring app using React, FastAPI, and Llama models, with Dockerized deployment on AWS ECS for scalability, providing real-time NLP-based feedback and improvement suggestions",
-    tags: ["React", "FastAPI", "AWS ECS", "Llama Model", "Docker", "Agentic AI"],
+      "Developed a resume scoring app using React and FastAPI, Dockerized deployment on AWS ECS, providing real-time NLP-based feedback and suggestions",
+    tags: ["React", "FastAPI", "AWS ECS", "Llama Model", "Docker"],
     imageUrl: scorepointImg,
   },
   {
     title: "Nutrition Tracking Database",
     description:
       "Developed a Nutrition Tracking System with SQL Server, Tableau dashboards, and secure handling of user-specific dietary and fitness data.",
-    tags: ["TSQL", "Database Design", "SQL Server", "Tableau", "Data Security"],
+    tags: ["T-SQL", "Database Design", "Tableau", "Data Security"],
     imageUrl: rmtdevImg,
   },
   
