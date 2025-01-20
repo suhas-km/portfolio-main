@@ -42,6 +42,7 @@ export default function Skills() {
             <ul className="flex flex-wrap justify-center gap-2 text-base text-gray-800">
               {skills.map((skill, index) => (
                 <motion.li
+                  key={`${category}-${skill}-${index}`}
                   className="bg-white borderBlack rounded-lg px-4 py-2 dark:bg-white/10 dark:text-white/80 
                     hover:bg-gradient-to-r hover:from-[#FF2D55] hover:to-[#FF3B30] hover:text-white
                     transform transition-all duration-200 ease-out
