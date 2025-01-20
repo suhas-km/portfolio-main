@@ -11,40 +11,41 @@ export default function About() {
   return (
     <motion.section
       ref={ref}
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
+      className="mb-28 max-w-[65rem] sm:mb-40 scroll-mt-28 px-4"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
       id="about"
     >
       <SectionHeading className="mb-8 text-center text-gray-900 dark:text-white">
-        About me
+        About Me
       </SectionHeading>
-      <p className="mb-3">
-      After graduating with a degree in{" "}
-      <span className="font-medium">Information Systems</span>, I honed my skills in
-      <span className="font-medium">software development, databases, data science, and machine learning</span>. 
-      <span className="italic">My favorite part of this field</span> is creating intelligent systems that solve real-world problems. 
-      I <span className="underline">enjoy</span> building scalable, efficient applications and continuously improving their performance. 
-      My core stack includes{" "}
-      <span className="font-medium">
-        AWS, React, Python, Java, and Spring Boot
-      </span>
-      . I am also skilled in SQL, Machine Learning, and deploying cloud-native solutions. 
-      I am passionate about leveraging technology to make impactful contributions and am always eager to learn and adapt. 
-      I am currently looking for a{" "}
-      <span className="font-medium">full-time position</span> as a software engineer or in an AI-focused role.
-      </p>
+      <div className="max-w-[60rem] mx-auto">
+        <p className="mb-3 text-base sm:text-lg text-justify leading-relaxed">
+          I am a graduate student in{" "}
+          <span className="font-medium">Information Systems</span> at Northeastern University, specializing in{" "}
+          <span className="font-medium">software development, data science, and machine learning</span>. 
+          I am passionate about building <span className="font-medium">scalable, efficient applications</span> that address real-world problems. 
+          My core stack includes{" "}
+          <span className="font-medium">
+            AWS, React, Python, Java, and Spring Boot
+          </span>
+          , and I have expertise in{" "}
+          <span className="font-medium">
+            SQL, machine learning, and deploying cloud-native solutions
+          </span>. 
+          I thrive on creating impactful solutions and continuously improving my skills to stay ahead in technology.
+        </p>
 
-      <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, watching movies, and playing with my dog. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
-        <span className="font-medium">history and philosophy</span>. I'm also
-        learning how to play the guitar.
-      </p>
+        <p className="text-base sm:text-lg text-justify leading-relaxed">
+          I am actively seeking a{" "}
+          <span className="font-medium">full-time role</span> as a software engineer or in an AI-focused position. My goal is to contribute to innovative, high-performing systems while embracing opportunities to learn and grow.
+        </p>
+      </div>
     </motion.section>
+  );
+}
+
 //     <motion.section
 //   ref={ref}
 //   className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
@@ -76,12 +77,12 @@ export default function About() {
 //     I enjoy diving into{" "}
 //     <span className="font-semibold text-white">Cognitive Science, Sociology, History, and Philosophy</span>, 
 //     broadening my perspective to fuel innovation and creativity. 
-//     I’m always eager to connect with like-minded individuals and collaborate on exciting opportunities.{" "}
-//     <span className="font-semibold text-gray-200">Let’s build something extraordinary together!</span>
+//     I'm always eager to connect with like-minded individuals and collaborate on exciting opportunities.{" "}
+//     <span className="font-semibold text-gray-200">Let's build something extraordinary together!</span>
 //   </p>
 // </motion.section>
 
 
 
-  );
-}
+//   );
+// }

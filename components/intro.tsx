@@ -31,13 +31,13 @@ export default function Intro() {
             }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1737165897229-54114045753a?fit=crop&w=900&h=650&q=100"
+              src="https://images.unsplash.com/photo-1737165897229-54114045753a?fit=crop&w=900&h=650&q=100&auto=format&crop=faces&zoom=2.2"
               alt="Suhas portrait"
               width="192"
               height="192"
               quality="95"
               priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-40 w-1000 rounded-full object-cover object-[center_center] border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>
 
@@ -58,11 +58,12 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl max-w-[60rem] mx-auto text-left sm:text-center whitespace-normal"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-      <span className="font-bold">Hello, I'm Suhas.</span> An AI/ML developer solving real-world challenges through innovative research, cloud solutions, and impactful software development.
+        <span className="font-bold">Hello, I'm Suhas.</span>{" "}
+        An AI/ML developer solving real-world challenges through innovative research, cloud solutions, and impactful software development.
       </motion.h1>
 
       <motion.div
