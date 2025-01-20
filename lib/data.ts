@@ -42,7 +42,7 @@ export const experiencesData = [
     title: "Graduate Teaching Assistent",
     location: "Northeastern University",
     description:
-      "Assisted Professor with Data Science Course",
+      "Assisted with the Data Science course, mentoring students, conducting labs, and grading assignments.",
     icon: React.createElement(LuGraduationCap),
     date: "January 2025 - May 2025",
   },
