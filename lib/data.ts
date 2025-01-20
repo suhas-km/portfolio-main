@@ -20,16 +20,16 @@ export const links = [
     hash: "#about",
   },
   {
+    name: "Experience",
+    hash: "#experience",
+  },
+  {
     name: "Projects",
     hash: "#projects",
   },
   {
     name: "Skills",
     hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
   },
   {
     name: "Contact",
@@ -42,7 +42,7 @@ export const experiencesData = [
     title: "Graduate Teaching Assistent",
     location: "Northeastern University",
     description:
-      "Assisted with the Data Science course, mentoring students, conducting labs, and grading assignments.",
+      "Assisted and mentored graduates with the Data Science course, conducting lab sessions, and helping practise MLOps",
     icon: React.createElement(LuGraduationCap),
     date: "January 2025 - May 2025",
   },
@@ -58,7 +58,7 @@ export const experiencesData = [
     title: "Software Engineer",
     location: "Runway Proptech LLC",
     description:
-      "I worked a backend software engineer. My stack includes Python, AWS, Microservices, RESTful APIs, SQL DB, Agile and AI Integration.",
+      "I worked a backend software engineer. My stack includes Python, AWS, Microservices, RESTful APIs, SQL DB, Agile and AI Integration",
     icon: React.createElement(FaLaptopCode),
     date: "August 2022 - September 2023",
   },

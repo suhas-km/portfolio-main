@@ -30,7 +30,7 @@ export default function Skills() {
       className="mb-20 max-w-[65rem] scroll-mt-28 text-center sm:mb-28 px-4"
     >
       <SectionHeading className="mb-8 text-center text-gray-900 dark:text-white">
-        My skills
+        Skills
       </SectionHeading>
       
       <div className="max-w-[60rem] mx-auto">

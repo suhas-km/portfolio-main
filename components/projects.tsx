@@ -12,7 +12,7 @@ export default function Projects() {
   return (
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
       <SectionHeading className="mb-8 text-center text-gray-900 dark:text-white">
-        My projects
+        Projects
       </SectionHeading>
       <div>
         {projectsData.map((project, index) => (
