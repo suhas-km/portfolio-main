@@ -31,13 +31,13 @@ export default function Intro() {
             }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1737165897229-54114045753a?fit=crop&w=900&h=650&q=100&auto=format&crop=faces&zoom=2.2"
+              src="https://images.unsplash.com/photo-1736965098883-43e78a019282?fit=crop&w=900&h=650&q=100&auto=format&crop=faces"
               alt="Suhas portrait"
               width="192"
               height="192"
               quality="95"
               priority={true}
-              className="h-40 w-1000 rounded-full object-cover object-[center_center] border-[0.35rem] border-white shadow-xl"
+              className="h-40 w-40 rounded-full object-cover object-[right_center] border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>
 

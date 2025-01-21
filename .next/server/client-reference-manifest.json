@@ -48,17 +48,17 @@
         "async": false
       }
     },
-    "(app-client)/./components/contact.tsx": {
+    "(app-client)/./components/experience.tsx": {
       "*": {
-        "id": "(sc_client)/./components/contact.tsx",
+        "id": "(sc_client)/./components/experience.tsx",
         "name": "*",
         "chunks": [],
         "async": false
       }
     },
-    "(app-client)/./components/intro.tsx": {
+    "(app-client)/./components/contact.tsx": {
       "*": {
-        "id": "(sc_client)/./components/intro.tsx",
+        "id": "(sc_client)/./components/contact.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -72,14 +72,6 @@
         "async": false
       }
     },
-    "(app-client)/./components/section-divider.tsx": {
-      "*": {
-        "id": "(sc_client)/./components/section-divider.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./components/skills.tsx": {
       "*": {
         "id": "(sc_client)/./components/skills.tsx",
@@ -88,9 +80,17 @@
         "async": false
       }
     },
-    "(app-client)/./components/experience.tsx": {
+    "(app-client)/./components/section-divider.tsx": {
       "*": {
-        "id": "(sc_client)/./components/experience.tsx",
+        "id": "(sc_client)/./components/section-divider.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./components/intro.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/intro.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -227,16 +227,16 @@
       ],
       "async": false
     },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/contact.tsx": {
-      "id": "(app-client)/./components/contact.tsx",
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/experience.tsx": {
+      "id": "(app-client)/./components/experience.tsx",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/intro.tsx": {
-      "id": "(app-client)/./components/intro.tsx",
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/contact.tsx": {
+      "id": "(app-client)/./components/contact.tsx",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
@@ -251,14 +251,6 @@
       ],
       "async": false
     },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/section-divider.tsx": {
-      "id": "(app-client)/./components/section-divider.tsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
     "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/skills.tsx": {
       "id": "(app-client)/./components/skills.tsx",
       "name": "*",
@@ -267,8 +259,16 @@
       ],
       "async": false
     },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/experience.tsx": {
-      "id": "(app-client)/./components/experience.tsx",
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/section-divider.tsx": {
+      "id": "(app-client)/./components/section-divider.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/intro.tsx": {
+      "id": "(app-client)/./components/intro.tsx",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"

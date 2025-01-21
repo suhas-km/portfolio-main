@@ -6,12 +6,16 @@ import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Suhas | Personal Portfolio",
-  description: "AI Engineer and Software Developer specializing in ML, cloud native solutions, and enterprise applications.",
+  description: "Suhas is a software engineer specializing in AI/ML and cloud solutions.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
