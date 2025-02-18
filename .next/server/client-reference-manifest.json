@@ -40,9 +40,9 @@
         "async": false
       }
     },
-    "(app-client)/./components/about.tsx": {
+    "(app-client)/./components/contact.tsx": {
       "*": {
-        "id": "(sc_client)/./components/about.tsx",
+        "id": "(sc_client)/./components/contact.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -56,9 +56,17 @@
         "async": false
       }
     },
-    "(app-client)/./components/contact.tsx": {
+    "(app-client)/./components/about.tsx": {
       "*": {
-        "id": "(sc_client)/./components/contact.tsx",
+        "id": "(sc_client)/./components/about.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./components/intro.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/intro.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -88,17 +96,9 @@
         "async": false
       }
     },
-    "(app-client)/./components/intro.tsx": {
+    "(app-client)/./components/theme-switch.tsx": {
       "*": {
-        "id": "(sc_client)/./components/intro.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./node_modules/react-hot-toast/dist/index.mjs": {
-      "*": {
-        "id": "(sc_client)/./node_modules/react-hot-toast/dist/index.mjs",
+        "id": "(sc_client)/./components/theme-switch.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -107,14 +107,6 @@
     "(app-client)/./components/header.tsx": {
       "*": {
         "id": "(sc_client)/./components/header.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./components/theme-switch.tsx": {
-      "*": {
-        "id": "(sc_client)/./components/theme-switch.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -131,6 +123,14 @@
     "(app-client)/./context/theme-context.tsx": {
       "*": {
         "id": "(sc_client)/./context/theme-context.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/react-hot-toast/dist/index.mjs": {
+      "*": {
+        "id": "(sc_client)/./node_modules/react-hot-toast/dist/index.mjs",
         "name": "*",
         "chunks": [],
         "async": false
@@ -219,8 +219,8 @@
       ],
       "async": false
     },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/about.tsx": {
-      "id": "(app-client)/./components/about.tsx",
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/contact.tsx": {
+      "id": "(app-client)/./components/contact.tsx",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
@@ -235,8 +235,16 @@
       ],
       "async": false
     },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/contact.tsx": {
-      "id": "(app-client)/./components/contact.tsx",
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/about.tsx": {
+      "id": "(app-client)/./components/about.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/intro.tsx": {
+      "id": "(app-client)/./components/intro.tsx",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
@@ -267,24 +275,8 @@
       ],
       "async": false
     },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/intro.tsx": {
-      "id": "(app-client)/./components/intro.tsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/node_modules/react-hot-toast/dist/index.mjs": {
-      "id": "(app-client)/./node_modules/react-hot-toast/dist/index.mjs",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
-      "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/theme-switch.tsx": {
+      "id": "(app-client)/./components/theme-switch.tsx",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
@@ -293,14 +285,6 @@
     },
     "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/header.tsx": {
       "id": "(app-client)/./components/header.tsx",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/components/theme-switch.tsx": {
-      "id": "(app-client)/./components/theme-switch.tsx",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
@@ -325,6 +309,22 @@
     },
     "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/app/globals.css": {
       "id": "(app-client)/./app/globals.css",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}": {
+      "id": "(app-client)/./node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/suhaskm/Documents/My Mac/Resumes/NEW Portfolio/portfolio-website/node_modules/react-hot-toast/dist/index.mjs": {
+      "id": "(app-client)/./node_modules/react-hot-toast/dist/index.mjs",
       "name": "*",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"

@@ -71,6 +71,7 @@ export const projectsData = [
       "AI app to achieve over 90% accuracy in translating natural language into SQL queries, enhancing data accessibility for non-technical users.",
     tags: ["LLM", "SQLite", "Prompt Engineering", "LangChain", "Docker", "Agentic AI"],
     imageUrl: wordanalyticsImg,
+    githubUrl: "https://github.com/suhaskm-neu/QueryMaster-AI"
   },
   {
     title: "DC SafeHouseSeeker AI",
@@ -78,6 +79,7 @@ export const projectsData = [
       "DC SafeHouseFinder AI: Built during aiXplain's Hackathon, provides personalized housing recommendations using AI and geospatial tech.",
     tags: ["AI Agents", "Vector DB", "aiXplain"],
     imageUrl: corpcommentImg,
+    githubUrl: "https://github.com/suhaskm-neu/SafeHomeSeeker-AI"
   },
   {
     title: "MatchPoint: The Resume Analyst",
@@ -85,6 +87,7 @@ export const projectsData = [
       "Developed a resume scoring app using React and FastAPI, Dockerized deployment on AWS ECS, providing real-time NLP-based feedback and suggestions",
     tags: ["React", "FastAPI", "AWS ECS", "Llama Model", "Docker"],
     imageUrl: scorepointImg,
+    githubUrl: "https://github.com/suhaskm-neu/MatchPoint"
   },
   {
     title: "Nutrition Tracking Database",
@@ -92,6 +95,7 @@ export const projectsData = [
       "Developed a Nutrition Tracking System with SQL Server, Tableau dashboards, and secure handling of user-specific dietary and fitness data.",
     tags: ["T-SQL", "Database Design", "Tableau", "Data Security"],
     imageUrl: rmtdevImg,
+    githubUrl: "https://github.com/suhaskm-neu/Nutrition-Management"
   },
   
   // {

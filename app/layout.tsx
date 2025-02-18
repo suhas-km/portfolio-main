@@ -14,7 +14,13 @@ export const metadata: Metadata = {
   title: "Suhas | Personal Portfolio",
   description: "Suhas is a software engineer specializing in AI/ML and cloud solutions.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      {
+        rel: 'icon',
+        url: '/s_favicon.png',
+        type: 'image/png'
+      }
+    ],
   },
 };
 
