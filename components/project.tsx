@@ -35,9 +35,9 @@ export default function Project({
   
   // Custom image positioning based on project title to optimize visibility
   const getImagePosition = () => {
-    if (title.includes("QueryMaster")) return "center top";
-    if (title.includes("SafeHouse")) return "65% center"; // Moved slightly to the right
-    if (title.includes("MatchPoint")) return "center 30%";
+    if (title.includes("QueryMaster")) return "center 25%"; // Zoomed out a bit more
+    if (title.includes("SafeHouse")) return "160% center"; // Moved further to the right
+    if (title.includes("MatchPoint")) return "center 25%";
     if (title.includes("Nutrition")) return "center";
     return "center top";
   };
