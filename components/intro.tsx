@@ -18,48 +18,57 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-16 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mb-16 max-w-[70rem] sm:mb-0 scroll-mt-[100rem] px-4"
     >
-      <div className="flex items-center justify-center">
-        <div className="relative">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8">
+        <div className="flex-1">
+          <motion.h1
+            className="mb-6 mt-4 text-2xl font-medium !leading-[1.5] sm:text-4xl text-left whitespace-normal"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="font-bold text-3xl sm:text-5xl block mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Hello, I'm Suhas.
+            </span>
+            An AI/ML developer solving real-world challenges through innovative research, cloud solutions, and impactful software development.
+          </motion.h1>
+        </div>
+        
+        <div className="flex-1 flex justify-center md:justify-end">
           <motion.div
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
-              type: "tween",
-              duration: 0.2,
+              type: "spring",
+              stiffness: 125,
+              damping: 15,
+              duration: 0.5,
             }}
+            className="relative"
           >
-            <Image
-              src="https://images.unsplash.com/photo-1736965098883-43e78a019282?fit=crop&w=900&h=650&q=100&auto=format&crop=faces"
-              alt="Suhas portrait"
-              width="192"
-              height="192"
-              quality="95"
-              priority={true}
-              className="h-40 w-40 rounded-full object-cover object-[right_center] border-[0.35rem] border-white shadow-xl"
-            />
+            <div className="relative overflow-hidden rounded-2xl border-4 border-white/10 shadow-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1736965098883-43e78a019282?fit=crop&w=900&h=650&q=100&auto=format&crop=faces"
+                alt="Suhas portrait"
+                width={450}  
+                height={500}
+                quality="95"
+                priority={true}
+                className="h-[400px] w-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent pointer-events-none"></div>
+            </div>
           </motion.div>
-
-          {/* Emoji removed as requested */}
         </div>
       </div>
 
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl max-w-[60rem] mx-auto text-left sm:text-center whitespace-normal"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <span className="font-bold">Hello, I'm Suhas.</span>{" "}
-        An AI/ML developer solving real-world challenges through innovative research, cloud solutions, and impactful software development.
-      </motion.h1>
-
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
-        initial={{ opacity: 0, y: 100 }}
+        className="flex flex-col sm:flex-row items-start md:items-center justify-start gap-2 mt-6 text-lg font-medium"
+        initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          delay: 0.1,
+          delay: 0.2,
         }}
       >
         <Link
