@@ -52,7 +52,7 @@ export default function Project({
       className="group h-full"
     >
       <section 
-        className={`bg-white/80 border border-gray-200 dark:border-transparent rounded-lg overflow-hidden relative hover:bg-gray-100 transition-all duration-200 text-gray-800 dark:text-white dark:bg-white/10 dark:hover:bg-white/20 cursor-pointer shadow-md hover:shadow-xl dark:shadow-lg dark:shadow-blue-900/10 w-full h-[24rem]`}
+        className={`bg-white/80 border border-gray-200 dark:border-transparent rounded-lg overflow-hidden relative hover:bg-gray-100 transition-all duration-100 text-gray-800 dark:text-white dark:bg-white/10 dark:hover:bg-white/20 cursor-pointer shadow-md hover:shadow-xl dark:shadow-lg dark:shadow-blue-900/10 w-full h-[24rem]`}
         onClick={() => window.open(githubUrl, '_blank')}
       >
         {isVertical ? (
@@ -66,7 +66,7 @@ export default function Project({
                 quality={90}
                 fill
                 style={{ objectFit: 'cover', objectPosition: getImagePosition() }}
-                className="transition-all duration-300 ease-out group-hover:scale-105"
+                className="transition-all duration-150 ease-out group-hover:scale-105"
               />
             </div>
             <div className="p-3.5 flex flex-col flex-grow">
@@ -97,7 +97,7 @@ export default function Project({
                 quality={90}
                 fill
                 style={{ objectFit: 'cover', objectPosition: getImagePosition() }}
-                className="transition-all duration-300 ease-out group-hover:scale-105"
+                className="transition-all duration-150 ease-out group-hover:scale-105"
               />
             </div>
 

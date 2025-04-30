@@ -39,6 +39,10 @@ export default function Research() {
             }}
             custom={index}
             onClick={() => window.open(research.link, '_blank')}
+            whileHover={{
+              y: -5,
+              transition: { duration: 0.08, ease: "easeOut" }
+            }}
           >
             {/* Absolute positioned link for SEO and accessibility */}
             <a 

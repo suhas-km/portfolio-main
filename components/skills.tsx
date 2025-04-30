@@ -5,6 +5,7 @@ import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import { useTheme } from "@/context/theme-context";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -22,6 +23,7 @@ const fadeInAnimationVariants = {
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
+  const { theme } = useTheme();
   
   // Get gradient colors for each category
   const getCategoryColors = (category: string) => {
@@ -52,16 +54,16 @@ export default function Skills() {
             <motion.div 
               key={category} 
               className="mb-6 relative p-6 rounded-xl bg-white/70 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 shadow-lg
-                transition-all duration-150 hover:shadow-xl hover:-translate-y-1 cursor-default"
+                transition-all duration-150 hover:shadow-xl cursor-default"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
               whileHover={{
-                scale: 1.02,
-                backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                transition: { duration: 0.15 }
-              }}
+                backgroundColor: theme === 'light' ? 'rgba(255, 255, 255, 0.6)' : 'rgba(255, 255, 255, 0.08)',
+                boxShadow: theme === 'light' ? '' : '0 8px 25px -5px rgba(59, 130, 246, 0.15)',
+                transition: { duration: 0.08 }
+              }}  
             >
               <div 
                 className="absolute inset-0 rounded-xl opacity-10 dark:opacity-10 z-0" 
@@ -75,9 +77,9 @@ export default function Skills() {
                   <motion.div
                     key={`${category}-${skill}-${index}`}
                     className={`bg-white/50 dark:bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-gray-200 dark:border-white/20
-                      hover:bg-gradient-to-r hover:border-transparent text-gray-700 dark:text-white/90
-                      transform transition-all duration-100 ease-out
-                      hover:shadow-xl relative hover:z-20 flex items-center justify-center h-full`}
+                      text-gray-700 dark:text-white/90
+                      transform will-change-transform
+                      relative hover:z-20 flex items-center justify-center h-full`}
                     style={{
                       transformStyle: 'preserve-3d',
                     }}
@@ -85,10 +87,15 @@ export default function Skills() {
                       scale: 1.05,
                       background: `linear-gradient(to right, ${from}, ${to})`,
                       boxShadow: `0 10px 25px -5px ${shadow}`,
+                      color: "white",
+                      borderColor: "transparent",
                       transition: {
-                        duration: 0.1,
-                        ease: [0.3, 0.7, 0.4, 1]
+                        duration: 0.03,
+                        ease: "easeOut"
                       }
+                    }}
+                    whileTap={{
+                      scale: 0.98
                     }}
                     initial="initial"
                     whileInView="animate"
