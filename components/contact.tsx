@@ -31,20 +31,20 @@ export default function Contact() {
     >
       <SectionHeading>Contact me</SectionHeading>
 
-      <p className="text-gray-700 mt-4 dark:text-white/80">
+      <p className="text-gray-600 mt-4 dark:text-white/80">
         Contact me directly at{" "}
-        <a className="underline" href="mailto:suhaskm23@gmail.com">
+        <a className="underline text-blue-600 dark:text-blue-400" href="mailto:suhaskm23@gmail.com">
           suhaskm23@gmail.com
         </a>{" "}
         /{" "}
-        <a className="underline" href="mailto:km.s@northeastern.edu">
+        <a className="underline text-blue-600 dark:text-blue-400" href="mailto:km.s@northeastern.edu">
           km.s@northeastern.edu
         </a>{" "}
         or through this form.
       </p>
 
       <form
-        className="mt-10 flex flex-col dark:text-black"
+        className="mt-10 flex flex-col text-gray-800 dark:text-black"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
 
@@ -57,7 +57,7 @@ export default function Contact() {
         }}
       >
         <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          className="h-14 px-4 rounded-lg bg-white border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="senderEmail"
           type="email"
           required
@@ -65,7 +65,7 @@ export default function Contact() {
           placeholder="Your email"
         />
         <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          className="h-52 my-3 rounded-lg bg-white border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
           placeholder="Your message"
           required

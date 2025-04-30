@@ -30,7 +30,7 @@ export default function Research() {
         {researchData.map((research, index) => (
           <motion.div
             key={index}
-            className="bg-gray-100 hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 transition-all duration-150 p-6 rounded-xl relative group cursor-pointer"
+            className="bg-white/80 hover:bg-gray-100 border border-gray-200 dark:border-transparent dark:bg-white/10 dark:hover:bg-white/20 transition-all duration-150 p-6 rounded-xl shadow-md hover:shadow-lg relative group cursor-pointer"
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
@@ -51,12 +51,12 @@ export default function Research() {
               <span className="sr-only">Read research paper</span>
             </a>
             
-            <h3 className="text-xl font-bold group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-all duration-150">
+            <h3 className="text-xl font-bold text-gray-800 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300 transition-all duration-150">
               {research.title}
             </h3>
             
             <div className="flex flex-wrap gap-2 mt-1 mb-2">
-              <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">
+              <span className="text-sm text-gray-600 dark:text-gray-300 font-medium">
                 {research.publication}
               </span>
               <span className="text-sm text-gray-500 dark:text-gray-400">
@@ -64,11 +64,11 @@ export default function Research() {
               </span>
             </div>
             
-            <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
               <span className="font-semibold">Authors:</span> {research.authors}
             </p>
             
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               {research.description}
             </p>
             
@@ -76,7 +76,7 @@ export default function Research() {
               {research.tags.map((tag, tagIndex) => (
                 <span
                   key={tagIndex}
-                  className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
+                  className="bg-blue-600/80 dark:bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
                 >
                   {tag}
                 </span>

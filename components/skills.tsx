@@ -51,7 +51,7 @@ export default function Skills() {
           return (
             <motion.div 
               key={category} 
-              className="mb-6 relative p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg
+              className="mb-6 relative p-6 rounded-xl bg-white/70 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 shadow-lg
                 transition-all duration-150 hover:shadow-xl hover:-translate-y-1 cursor-default"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -59,12 +59,12 @@ export default function Skills() {
               viewport={{ once: true }}
               whileHover={{
                 scale: 1.02,
-                backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                backgroundColor: 'rgba(255, 255, 255, 0.5)',
                 transition: { duration: 0.15 }
               }}
             >
               <div 
-                className="absolute inset-0 rounded-xl opacity-10 z-0" 
+                className="absolute inset-0 rounded-xl opacity-10 dark:opacity-10 z-0" 
                 style={{ background: `linear-gradient(to right, ${from}, ${to})` }}
               />
               <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-4 capitalize relative z-10">
@@ -74,8 +74,8 @@ export default function Skills() {
                 {skills.map((skill, index) => (
                   <motion.div
                     key={`${category}-${skill}-${index}`}
-                    className={`bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20
-                      hover:bg-gradient-to-r hover:border-transparent text-white/90
+                    className={`bg-white/50 dark:bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-gray-200 dark:border-white/20
+                      hover:bg-gradient-to-r hover:border-transparent text-gray-700 dark:text-white/90
                       transform transition-all duration-100 ease-out
                       hover:shadow-xl relative hover:z-20 flex items-center justify-center h-full`}
                     style={{

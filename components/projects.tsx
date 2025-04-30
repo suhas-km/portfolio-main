@@ -14,11 +14,9 @@ export default function Projects() {
       <SectionHeading className="mb-8 text-center text-gray-900 dark:text-white">
         Projects
       </SectionHeading>
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-[85rem] mx-auto px-6">
         {projectsData.map((project, index) => (
-          <React.Fragment key={index}>
-            <Project {...project} />
-          </React.Fragment>
+          <Project key={index} {...project} index={index} />
         ))}
       </div>
     </section>

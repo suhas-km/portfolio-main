@@ -31,9 +31,9 @@ export default function Experience() {
               className="experience-timeline-element group"
               contentStyle={{
                 background:
-                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
+                  theme === "light" ? "rgba(255, 255, 255, 0.75)" : "rgba(255, 255, 255, 0.05)",
                 boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
+                border: theme === "light" ? "1px solid rgba(200, 200, 210, 0.5)" : "1px solid rgba(255, 255, 255, 0.05)",
                 textAlign: "left",
                 padding: "1.3rem 2rem",
                 cursor: "pointer",
@@ -42,7 +42,7 @@ export default function Experience() {
               contentArrowStyle={{
                 borderRight:
                   theme === "light"
-                    ? "0.4rem solid #9ca3af"
+                    ? "0.4rem solid rgba(156, 163, 175, 0.5)"
                     : "0.4rem solid rgba(255, 255, 255, 0.5)",
               }}
               date={item.date}
@@ -55,7 +55,7 @@ export default function Experience() {
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
               <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+              <p className="!mt-1 !font-normal text-gray-600 dark:text-white/75">
                 {item.description}
               </p>
             </VerticalTimelineElement>
