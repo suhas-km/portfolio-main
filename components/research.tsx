@@ -30,7 +30,7 @@ export default function Research() {
         {researchData.map((research, index) => (
           <motion.div
             key={index}
-            className="bg-gray-100 hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 transition p-6 rounded-xl"
+            className="bg-gray-100 hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 transition-all duration-150 p-6 rounded-xl relative group cursor-pointer"
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
@@ -38,17 +38,22 @@ export default function Research() {
               once: true,
             }}
             custom={index}
+            onClick={() => window.open(research.link, '_blank')}
           >
+            {/* Absolute positioned link for SEO and accessibility */}
             <a 
               href={research.link} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group"
+              className="absolute inset-0 z-10"
+              aria-label={`Read research paper: ${research.title}`}
             >
-              <h3 className="text-xl font-bold group-hover:text-gray-700 dark:group-hover:text-gray-300 transition">
-                {research.title}
-              </h3>
+              <span className="sr-only">Read research paper</span>
             </a>
+            
+            <h3 className="text-xl font-bold group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-all duration-150">
+              {research.title}
+            </h3>
             
             <div className="flex flex-wrap gap-2 mt-1 mb-2">
               <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">

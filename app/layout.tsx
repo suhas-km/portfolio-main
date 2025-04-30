@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className="!scroll-smooth overflow-x-hidden">
       <head>
         <link
           rel="icon"
@@ -33,7 +33,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} bg-gray-950 text-gray-100 relative pt-28 sm:pt-36`}
+        className={`${inter.className} bg-gray-950 text-gray-100 relative pt-28 sm:pt-36 overflow-x-hidden`}
       >
         <div className="absolute inset-0 -z-20 bg-[linear-gradient(to_bottom,#0f172a,#1e1b4b)] opacity-95"></div>
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.15),transparent_70%)] pointer-events-none"></div>

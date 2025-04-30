@@ -50,7 +50,7 @@ export const experiencesData = [
   },
   {
     title: "Graduate Research Engineer",
-    location: "MIT AI Labs",
+    location: "Northeastern University",
     description:
       "Conducted research on AILA neural network architecture focusing on efficient dense skip connections. Contributed to REALM and LLM RLHF post-training research to improve model alignment with better reward models in RL. Explored applications in VR environments.",
     icon: React.createElement(FaBrain),
@@ -179,11 +179,15 @@ export const skillsData = {
     "Redis",
   ],
   dataScienceAI: [
-    "scikit-learn",
     "PyTorch",
     "TensorFlow",
+    "RLHF",
+    "LLM Fine-tuning",
+    "Post-training Alignment",
+    "Reward Modeling",
     "NLP",
     "LangChain",
+    "Prompt Engineering",
     "OpenAI",
     "MLOps",
     "Data Analytics",
@@ -197,6 +201,16 @@ export const skillsData = {
     "Apache Spark",
     "Kafka",
     "Pinecone",
+  ],
+  interpersonal: [
+    "Project Leadership",
+    "Research Collaboration", 
+    "Technical Writing",
+    "Public Speaking",
+    "Team Mentoring",
+    "Cross-functional",
+    "Client Presentations",
+    "Agile",
   ],
 } as const;
 
