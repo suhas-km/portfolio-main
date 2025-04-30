@@ -1,12 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function About() {
   const { ref } = useSectionInView("About");
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  
+  // Set About as active section on initial page load
+  useEffect(() => {
+    setActiveSection("About");
+    setTimeOfLastClick(Date.now());
+  }, []);
 
   return (
     <motion.section

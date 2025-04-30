@@ -9,12 +9,10 @@ import { FaLaptopCode } from "react-icons/fa";
 import { BiCodeBlock } from "react-icons/bi";
 import { SiNextdotjs } from "react-icons/si";
 import scorepointImg from "@/public/scorepoint.png";
+import { MdScience } from "react-icons/md";
+import { FaBrain } from "react-icons/fa";
 
 export const links = [
-  {
-    name: "Home",
-    hash: "#home",
-  },
   {
     name: "About",
     hash: "#about",
@@ -26,6 +24,10 @@ export const links = [
   {
     name: "Projects",
     hash: "#projects",
+  },
+  {
+    name: "Research",
+    hash: "#research",
   },
   {
     name: "Skills",
@@ -45,6 +47,14 @@ export const experiencesData = [
       "Assisted and mentored graduates with the Data Science course, conducting lab sessions, and helping practise MLOps",
     icon: React.createElement(LuGraduationCap),
     date: "January 2025 - May 2025",
+  },
+  {
+    title: "Graduate Research Engineer",
+    location: "MIT AI Labs",
+    description:
+      "Conducted research on AILA neural network architecture focusing on efficient dense skip connections. Contributed to REALM and LLM RLHF post-training research to improve model alignment with better reward models in RL. Explored applications in VR environments.",
+    icon: React.createElement(FaBrain),
+    date: "October 2024 - Present",
   },
   {
     title: "Cloud Engineer Intern",
@@ -104,6 +114,39 @@ export const projectsData = [
   //     "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
   //   tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
   //   imageUrl: rmtdevImg,
+  // },
+] as const;
+
+export const researchData = [
+  {
+    title: "AILA: Adaptive Integrated Layered Attention",
+    publication: "arXiv",
+    authors: "William Claster, Suhas K M, Dhairya Gundechia",
+    date: "2024",
+    description:
+      "Proposed a novel neural architecture for adaptive integrated layering of attention mechanisms, enabling efficient and effective integration of multiple modalities in AI models.",
+    tags: ["Neural Network Architecture", "Attention Mechanisms", "Dense Skip Connections", "Multi-Task Modalities", "Self-Attention", "Recurrent Neural Networks"],
+    link: "https://arxiv.org/abs/2503.22742"
+  },
+  {
+    title: "REALM: Enhancing Reward Models for LLM Alignment introducing Explicit Prompt-Answer Relevance",
+    publication: "arXiv",
+    authors: "William Claster, Suhas K M, Dhairya Gundechia",
+    date: "2024",
+    description:
+      "An alignment learning model for relevance-enhanced alignment of AI models, enabling improved performance and accuracy in AI applications.",
+    tags: ["Alignment Learning", "Relevance-Enhanced Alignment", "AI Models", "Performance Optimization", "Accuracy Improvement"],
+    link: "https://arxiv.org/abs/2503.22742"
+  },
+  // {
+  //   title: "Machine Learning Approaches for Sustainable Urban Housing",
+  //   publication: "arXiv",
+  //   authors: "William Claster, Suhas K M, Dhairya Gundechia",
+  //   date: "2024",
+  //   description:
+  //     "Developed machine learning models to analyze housing data for predicting sustainability metrics and optimizing resource allocation in urban environments.",
+  //   tags: ["Machine Learning", "Urban Planning", "Sustainability"],
+  //   link: "https://arxiv.org/abs/2503.22742"
   // },
 ] as const;
 

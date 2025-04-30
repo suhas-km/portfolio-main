@@ -13,3 +13,26 @@ html.dark {
 .borderBlack {
   @apply border border-black/10;
 }
+
+/* Experience timeline hover effects */
+.experience-timeline-element .vertical-timeline-element-content {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.experience-timeline-element:hover .vertical-timeline-element-content {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Light theme hover effects */
+html:not(.dark) .experience-timeline-element:hover .vertical-timeline-element-content {
+  background: #e5e7eb !important;
+  border-left: 4px solid #6366f1 !important;
+}
+
+/* Dark theme hover effects */
+html.dark .experience-timeline-element:hover .vertical-timeline-element-content {
+  background: rgba(30, 41, 59, 0.7) !important;
+  border-left: 4px solid rgba(99, 102, 241, 0.8) !important;
+}
