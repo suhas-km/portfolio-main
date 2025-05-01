@@ -41,20 +41,20 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Graduate Research Assistant",
+    location: "Northeastern University",
+    description:
+      "Conducted research on AILA neural network architecture focusing on efficient dense skip connections. Contributed to REALM and LLM RLHF post-training research to improve model alignment with better reward models in RL. Explored applications in VR environments.",
+    icon: React.createElement(FaBrain),
+    date: "January 2025 - Present",
+  },
+  {
     title: "Graduate Teaching Assistent",
     location: "Northeastern University",
     description:
       "Assisted and mentored graduates with the Data Science course, conducting lab sessions, and helping practise MLOps",
     icon: React.createElement(LuGraduationCap),
     date: "January 2025 - May 2025",
-  },
-  {
-    title: "Graduate Research Engineer",
-    location: "Northeastern University",
-    description:
-      "Conducted research on AILA neural network architecture focusing on efficient dense skip connections. Contributed to REALM and LLM RLHF post-training research to improve model alignment with better reward models in RL. Explored applications in VR environments.",
-    icon: React.createElement(FaBrain),
-    date: "October 2024 - Present",
   },
   {
     title: "Cloud Engineer Intern",

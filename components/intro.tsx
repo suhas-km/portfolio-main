@@ -11,7 +11,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
 // Rotating keywords for animation
-const keywords = ["AI Researcher", "Cloud Engineer", "ML Developer", "Neural Architect"];
+const keywords = ["Data Scientist", "Cloud Certified Software Engineer", "AI/ML Research & Development"];
 
 export default function Intro() {
   const { ref } = useSectionInView("About", 0.5);
@@ -60,12 +60,34 @@ export default function Intro() {
             </motion.span>
 
             <motion.h1
-              className="font-bold text-4xl sm:text-6xl block mb-5 bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent leading-tight"
+              className="font-bold text-4xl sm:text-6xl block mb-5 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Hello, I'm Suhas.
+              <span className="bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Hello, I'm </span>
+              <motion.span 
+                className="relative inline-block radiant-text cursor-pointer"
+                initial={{ backgroundPosition: "0% 50%" }}
+                animate={{ 
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                transition={{ 
+                  repeat: Infinity, 
+                  duration: 8,
+                  ease: "linear"
+                }}
+                whileHover={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  transition: {
+                    repeat: Infinity, 
+                    duration: 1.5,
+                    ease: "linear"
+                  }
+                }}
+              >
+                Suhas
+              </motion.span>
             </motion.h1>
             
             <div className="h-8 mb-5" ref={scope}>
@@ -81,17 +103,18 @@ export default function Intro() {
               </motion.span>
             </div>
             
-            <motion.p 
-              className="text-md sm:text-lg text-gray-600 dark:text-gray-300 max-w-[550px] leading-relaxed mb-8"
-              initial={{ opacity: 0, y: 20 }}
+            <motion.div
+              className="text-gray-600 dark:text-gray-300 mt-4 mb-8 flex flex-col"
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Transforming complex challenges into elegant solutions across AI, software engineering, and cloud infrastructure. Passionate about building innovative technologies that create meaningful impact in our increasingly digital world.
-            </motion.p>
+              <p className="text-base mb-3">Transforming complex challenges into elegant solutions across AI, software engineering, and cloud infrastructure</p>
+              <p className="text-base">Passionate about building innovative technologies that create meaningful impact in our increasingly digital world</p>
+            </motion.div>
             
             <motion.div
-              className="flex flex-wrap items-center gap-4 mt-4"
+              className="flex flex-wrap items-center justify-end gap-4 mt-4 w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -117,17 +140,19 @@ export default function Intro() {
 
               <div className="flex gap-3 ml-1">
                 <a
-                  className="bg-transparent text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer p-2 text-xl"
+                  className="bg-transparent text-gray-500 dark:text-gray-400 hover:text-[#0077B5] dark:hover:text-[#0077B5] flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer p-2 text-2xl"
                   href="https://www.linkedin.com/in/suhaskm/"
                   target="_blank"
+                  aria-label="LinkedIn Profile"
                 >
                   <BsLinkedin />
                 </a>
 
                 <a
-                  className="bg-transparent text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer p-2 text-xl"
+                  className="bg-transparent text-gray-500 dark:text-gray-400 hover:text-[#333] dark:hover:text-white flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer p-2 text-2xl"
                   href="https://github.com/suhas-km"
                   target="_blank"
+                  aria-label="GitHub Profile"
                 >
                   <FaGithubSquare />
                 </a>

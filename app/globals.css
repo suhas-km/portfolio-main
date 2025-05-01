@@ -36,3 +36,68 @@ html.dark .experience-timeline-element:hover .vertical-timeline-element-content 
   background: rgba(30, 41, 59, 0.7) !important;
   border-left: 4px solid rgba(99, 102, 241, 0.8) !important;
 }
+
+/* Radiant text animation */
+.radiant-text {
+  background: linear-gradient(90deg, 
+    #3b82f6, /* blue-500 */
+    #8b5cf6, /* violet-500 */
+    #ec4899, /* pink-500 */
+    #f59e0b, /* amber-500 */
+    #10b981, /* emerald-500 */
+    #3b82f6  /* back to blue-500 */
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.radiant-text::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #3b82f6, /* blue-500 */
+    #8b5cf6, /* violet-500 */
+    #ec4899, /* pink-500 */
+    #f59e0b, /* amber-500 */
+    #10b981, /* emerald-500 */
+    #3b82f6  /* back to blue-500 */
+  );
+  background-size: 300% 100%;
+  opacity: 0.7;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+
+.radiant-text:hover::after {
+  transform: scaleX(1);
+}
+
+/* Styled paragraph for intro section */
+.styled-paragraph {
+  line-height: 1.7;
+}
+
+.highlighted-text {
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  color: #4f46e5; /* indigo-600 */
+  margin-right: 0.25rem;
+}
+
+html.dark .highlighted-text {
+  color: #818cf8; /* indigo-400 */
+}
+
+.styled-paragraph span {
+  margin-right: 0.25rem;
+}
