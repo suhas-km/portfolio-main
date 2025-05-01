@@ -71,7 +71,9 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <SubmitBtn />
+        <div className="flex justify-end mt-2">
+          <SubmitBtn />
+        </div>
       </form>
     </motion.section>
   );

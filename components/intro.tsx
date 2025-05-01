@@ -104,7 +104,7 @@ export default function Intro() {
             </div>
             
             <motion.div
-              className="text-gray-600 dark:text-gray-300 mt-4 mb-8 flex flex-col"
+              className="text-gray-600 dark:text-gray-300 mt-4 mb-8 flex flex-col w-full"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -114,7 +114,7 @@ export default function Intro() {
             </motion.div>
             
             <motion.div
-              className="flex flex-wrap items-center justify-end gap-4 mt-4 w-full"
+              className="flex flex-wrap items-center gap-4 mt-4 w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -132,7 +132,7 @@ export default function Intro() {
 
               <a
                 className="group bg-transparent border border-gray-500 dark:border-gray-600 px-6 py-3 flex items-center gap-2 rounded-md outline-none focus:scale-105 hover:scale-105 hover:border-gray-800 dark:hover:border-white active:scale-100 transition-all text-sm font-medium text-gray-700 dark:text-white"
-                href="/Suhas_Resume.pdf"
+                href="/CV.pdf"
                 download
               >
                 Download CV <HiDownload className="opacity-80 group-hover:translate-y-1 transition" />
