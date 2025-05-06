@@ -30,24 +30,15 @@ export default function About() {
       </SectionHeading>
       <div className="max-w-[60rem] mx-auto">
         <p className="mb-3 text-base sm:text-lg text-justify leading-relaxed">
-          I am a graduate student in{" "}
-          <span className="font-medium">Information Systems</span> at Northeastern University, specializing in{" "}
-          <span className="font-medium">software development, data science, and machine learning</span>. 
-          I am passionate about building <span className="font-medium">scalable, efficient applications</span> that address real-world problems. 
-          My core stack includes{" "}
-          <span className="font-medium">
-            AWS, React, Python, Java, and Spring Boot
-          </span>
-          , and I have expertise in{" "}
-          <span className="font-medium">
-            SQL, machine learning, and deploying cloud-native solutions
-          </span>. 
-          I thrive on creating impactful solutions and continuously improving my skills to stay ahead in technology.
+          I'm <span className="font-medium">Suhas - An engineer with proven expertise in AI Research, Cloud-native Software Development, and Teaching Excellence</span>
+        </p>
+
+        <p className="mb-3 text-base sm:text-lg text-justify leading-relaxed">
+          I specialize in designing <span className="font-medium">intelligent, scalable software</span> that blends rigorous problem-solving with real-world application. With a background in <span className="font-medium">software engineering, data science, and machine learning</span>, I navigate across abstraction layers — from high-level design to low-level optimization.
         </p>
 
         <p className="text-base sm:text-lg text-justify leading-relaxed">
-          I am actively seeking a{" "}
-          <span className="font-medium">full-time role</span> as a software engineer or in an AI-focused position. My goal is to contribute to innovative, high-performing systems while embracing opportunities to learn and grow.
+          My approach is rooted in <span className="font-medium">analytical thinking</span>: understanding patterns, reducing complexity, and building reliable solutions that adapt and evolve. Whether working on <span className="font-medium">cloud-native architectures</span> or research-driven <span className="font-medium">AI systems</span>, I value clarity, efficiency, and continuous learning.
         </p>
       </div>
     </motion.section>

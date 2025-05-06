@@ -23,7 +23,7 @@ export default function Intro() {
   useEffect(() => {
     const interval = setInterval(() => {
       setKeywordIndex((prev) => (prev + 1) % keywords.length);
-    }, 3000);
+    }, 1500);
     return () => clearInterval(interval);
   }, []);
 
