@@ -17,6 +17,10 @@ import { ExperienceItem, NavLink, ProjectItem, ResearchItem, SkillsData } from "
 
 export const links = [
   {
+    name: "Home",
+    hash: "#home",
+  },
+  {
     name: "About",
     hash: "#about",
   },

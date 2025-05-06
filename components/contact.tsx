@@ -324,7 +324,7 @@ export default function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-8 mb-6">
         <motion.div 
           className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 p-4 rounded-xl shadow-md flex flex-col items-center text-center"
-          whileHover={{ y: -5, transition: { duration: 0.2 } }}
+          whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
@@ -339,7 +339,7 @@ export default function Contact() {
         
         <motion.div 
           className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 p-4 rounded-xl shadow-md flex flex-col items-center text-center"
-          whileHover={{ y: -5, transition: { duration: 0.2 } }}
+          whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -348,13 +348,13 @@ export default function Contact() {
             <FaMapMarkerAlt className="text-secondary-600 dark:text-secondary-400 text-lg" />
           </div>
           <h3 className="font-bold text-gray-800 dark:text-white mb-1 text-sm">Location</h3>
-          <p className="text-gray-600 dark:text-gray-300 text-xs mb-1">Based in Boston, MA</p>
-          <p className="text-gray-600 dark:text-gray-300 text-xs">Available for remote work</p>
+          <p className="text-gray-600 dark:text-gray-300 text-xs mb-1">Washington D.C</p>
+          <p className="text-gray-600 dark:text-gray-300 text-xs">Open to relocate for on-site opportunities</p>
         </motion.div>
         
         <motion.div 
           className="bg-white dark:bg-black border border-gray-200 dark:border-gray-800 p-4 rounded-xl shadow-md flex flex-col items-center text-center"
-          whileHover={{ y: -5, transition: { duration: 0.2 } }}
+          whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}

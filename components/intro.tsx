@@ -14,7 +14,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 const keywords = ["Data Scientist", "Cloud Certified Software Engineer", "AI/ML Research & Development"];
 
 export default function Intro() {
-  const { ref } = useSectionInView("About", 0.5);
+  const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const [keywordIndex, setKeywordIndex] = useState(0);
   const [scope, animate] = useAnimate();
@@ -186,6 +186,45 @@ export default function Intro() {
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll down indicator */}
+      <motion.div 
+        className="flex justify-center w-full mt-8 mb-4"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7 }}
+      >
+        <Link
+          href="#about"
+          className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 group"
+          onClick={() => {
+            setActiveSection("About");
+            setTimeOfLastClick(Date.now());
+          }}
+          aria-label="Scroll to About section"
+        >
+          <span className="text-sm mb-2">Scroll Down</span>
+          <motion.div 
+            className="w-8 h-8 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center group-hover:border-blue-600 dark:group-hover:border-blue-400 transition-colors duration-300"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ 
+              repeat: Infinity, 
+              duration: 2,
+              repeatType: "loop",
+              ease: "easeInOut" 
+            }}
+          >
+            <svg 
+              className="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </motion.div>
+        </Link>
+      </motion.div>
     </section>
   );
 }

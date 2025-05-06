@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="z-[999] relative">
       <motion.div
-        className="fixed top-0 left-1/2 h-[5rem] w-[110%] rounded-none bg-white/85 dark:bg-gray-800/60 shadow-lg shadow-black/10 backdrop-blur-lg sm:top-6 sm:h-[3.75rem] sm:w-[38rem] sm:rounded-full dark:bg-gray-800/70"
+        className="fixed top-0 left-1/2 h-[5rem] w-[125%] rounded-none bg-white/90 dark:bg-gray-800/80 shadow-lg shadow-black/15 backdrop-blur-lg sm:top-6 sm:h-[3.75rem] sm:w-[44rem] sm:rounded-full dark:bg-gray-800/80"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
@@ -30,9 +30,9 @@ export default function Header() {
             >
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 hover:text-gray-900 dark:hover:text-white transition",
+                  "flex w-full items-center justify-center px-3 py-3 hover:text-blue-600 dark:hover:text-blue-300 transition",
                   {
-                    "text-gray-900 dark:text-white font-semibold":
+                    "text-blue-700 dark:text-white font-semibold":
                       activeSection === link.name,
                   }
                 )}
@@ -46,7 +46,7 @@ export default function Header() {
 
                 {link.name === activeSection && (
                   <motion.span
-                    className="bg-gray-200/50 dark:bg-white/20 rounded-full absolute inset-0 -z-10"
+                    className="bg-blue-100 dark:bg-white/20 rounded-full absolute inset-0 -z-10 shadow-inner ring-1 ring-blue-200 dark:ring-white/30"
                     layoutId="activeSection"
                     transition={{
                       type: "spring",
