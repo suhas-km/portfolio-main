@@ -40,7 +40,7 @@ export default function Card({
   transition = { duration: 0.4 },
   viewport = { once: true },
   className = "",
-  whileHover = { y: -5 },
+  whileHover = {}, // Removed y: -5 to eliminate up-down hover animation
   layout = false,
 }: CardProps) {
   const { theme } = useTheme();
@@ -50,7 +50,7 @@ export default function Card({
       className={`relative overflow-hidden rounded-lg border ${
         theme === "light" 
           ? "bg-white shadow-sm border-gray-200 hover:border-blue-300 hover:shadow-lg" 
-          : "bg-gray-900/80 border-gray-800 hover:border-blue-500/50 hover:bg-gray-800/90"
+          : "bg-black border-gray-800 hover:border-blue-500/50 hover:bg-gray-800/90"
       } transition-all duration-300 ${onClick ? "cursor-pointer" : ""} group ${className}`}
       onClick={onClick}
       initial={initial}

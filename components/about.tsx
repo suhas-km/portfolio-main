@@ -10,11 +10,7 @@ export default function About() {
   const { ref } = useSectionInView("About");
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   
-  // Set About as active section on initial page load
-  useEffect(() => {
-    setActiveSection("About");
-    setTimeOfLastClick(Date.now());
-  }, []);
+  // Removed forced About section activation on page load
 
   return (
     <motion.section

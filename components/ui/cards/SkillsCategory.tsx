@@ -9,11 +9,9 @@ import { useTheme } from "@/context/theme-context";
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
-    y: 100,
   },
   animate: (index: number) => ({
     opacity: 1,
-    y: 0,
     transition: {
       delay: 0.05 * index,
     },
@@ -66,8 +64,8 @@ export default function SkillsCategory({ category, skills }: SkillsCategoryProps
       className="mb-6 relative p-6 rounded-xl bg-white/70 dark:bg-white/5 backdrop-blur-sm 
                  border border-gray-200 dark:border-white/10 shadow-lg
                  transition-all duration-150 hover:shadow-xl cursor-default"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
       whileHover={{
@@ -90,40 +88,20 @@ export default function SkillsCategory({ category, skills }: SkillsCategoryProps
       {/* Skills grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 relative z-10">
         {skills.map((skill, index) => (
-          <motion.div
+          <div
             key={`${category}-${skill}-${index}`}
-            className="bg-white/50 dark:bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 
-                       border border-gray-200 dark:border-white/20
-                       text-gray-700 dark:text-white/90
-                       transform will-change-transform
-                       relative hover:z-20 flex items-center justify-center h-full"
+            className="backdrop-blur-sm rounded-lg px-3 py-2 
+                       border border-transparent
+                       text-white hover:border-white/30
+                       relative hover:z-20 flex items-center justify-center h-full
+                       transition-all duration-200"
             style={{
-              transformStyle: 'preserve-3d',
-            }}
-            whileHover={{
-              scale: 1.05,
               background: `linear-gradient(to right, ${from}, ${to})`,
-              boxShadow: `0 10px 25px -5px ${shadow}`,
-              color: "white",
-              borderColor: "transparent",
-              transition: {
-                duration: 0.03,
-                ease: "easeOut"
-              }
+              boxShadow: `0 5px 15px -5px ${shadow}`
             }}
-            whileTap={{
-              scale: 0.98
-            }}
-            initial="initial"
-            whileInView="animate"
-            variants={fadeInAnimationVariants}
-            viewport={{
-              once: true,
-            }}
-            custom={index}
           >
             <span className="font-medium">{skill}</span>
-          </motion.div>
+          </div>
         ))}
       </div>
     </motion.div>

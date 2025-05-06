@@ -187,25 +187,25 @@ export default function Intro() {
         </div>
       </div>
 
-      {/* Scroll down indicator */}
+      {/* Scroll down indicator with vertical line */}
       <motion.div 
-        className="flex justify-center w-full mt-8 mb-4"
+        className="flex flex-col items-center w-full mt-8 mb-4"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
       >
         <Link
           href="#about"
-          className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 group"
+          className="flex flex-col items-center group"
           onClick={() => {
             setActiveSection("About");
             setTimeOfLastClick(Date.now());
           }}
           aria-label="Scroll to About section"
         >
-          <span className="text-sm mb-2">Scroll Down</span>
+          <span className="text-sm font-semibold mb-2 text-gray-800 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Scroll Down</span>
           <motion.div 
-            className="w-8 h-8 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center group-hover:border-blue-600 dark:group-hover:border-blue-400 transition-colors duration-300"
+            className="w-8 h-8 rounded-full border-2 border-blue-500/80 dark:border-blue-400/80 bg-white dark:bg-gray-800 flex items-center justify-center group-hover:border-blue-600 dark:group-hover:border-blue-400 transition-colors duration-300 shadow-sm"
             animate={{ y: [0, 10, 0] }}
             transition={{ 
               repeat: Infinity, 
@@ -215,7 +215,7 @@ export default function Intro() {
             }}
           >
             <svg 
-              className="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300" 
+              className="w-4 h-4 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300" 
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
@@ -224,6 +224,7 @@ export default function Intro() {
             </svg>
           </motion.div>
         </Link>
+        {/* No additional vertical line needed */}
       </motion.div>
     </section>
   );
