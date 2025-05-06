@@ -15,7 +15,7 @@ export default function Projects() {
   return (
     <section id="projects" ref={ref} className="scroll-mt-28 mb-24">
       <SectionHeading>Projects</SectionHeading>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-8 lg:gap-y-8 max-w-[80rem] mx-auto px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-16 lg:gap-y-12 max-w-[90rem] mx-auto px-6 lg:px-12">
         {projectsData.map((project, index) => (
           <ProjectCard key={index} {...project} index={index} />
         ))}

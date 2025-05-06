@@ -156,7 +156,7 @@ export const researchData = [
     title: "AILA: Adaptive Integrated Layered Attention",
     publication: "arXiv",
     authors: "William Claster, Suhas K M, Dhairya Gundechia",
-    date: "2024",
+    date: "2025",
     description:
       "Proposed a novel neural architecture for adaptive integrated layering of attention mechanisms, enabling efficient and effective integration of multiple modalities in AI models.",
     tags: ["Neural Network Architecture", "Attention Mechanisms", "Dense Skip Connections", "Multi-Task Modalities", "Self-Attention", "Recurrent Neural Networks"],
@@ -166,7 +166,7 @@ export const researchData = [
     title: "REALM: Enhancing Reward Models for LLM Alignment introducing Explicit Prompt-Answer Relevance",
     publication: "arXiv",
     authors: "William Claster, Suhas K M, Dhairya Gundechia",
-    date: "2024",
+    date: "2025",
     description:
       "An alignment learning model for relevance-enhanced alignment of AI models, enabling improved performance and accuracy in AI applications.",
     tags: ["Alignment Learning", "Relevance-Enhanced Alignment", "AI Models", "Performance Optimization", "Accuracy Improvement"],
@@ -176,7 +176,7 @@ export const researchData = [
   //   title: "Machine Learning Approaches for Sustainable Urban Housing",
   //   publication: "arXiv",
   //   authors: "William Claster, Suhas K M, Dhairya Gundechia",
-  //   date: "2024",
+  //   date: "2025",
   //   description:
   //     "Developed machine learning models to analyze housing data for predicting sustainability metrics and optimizing resource allocation in urban environments.",
   //   tags: ["Machine Learning", "Urban Planning", "Sustainability"],
