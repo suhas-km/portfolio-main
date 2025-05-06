@@ -63,9 +63,8 @@ export default function ResearchCard({
   return (
     <>
       <motion.div
-        className="bg-white/80 hover:bg-gray-100 border border-gray-200 dark:border-transparent 
-                  dark:bg-white/10 dark:hover:bg-white/20 transition-all duration-150 p-6 px-8 rounded-xl 
-                  shadow-md hover:shadow-lg relative group cursor-pointer w-full mx-auto"
+        className="card-light card-dark transition-all duration-150 p-6 px-8 rounded-xl 
+                  relative group cursor-pointer w-full mx-auto"
         variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
@@ -74,10 +73,6 @@ export default function ResearchCard({
         }}
         custom={index}
         onClick={handleCardClick}
-        whileHover={{
-          y: -5,
-          transition: { duration: 0.08, ease: "easeOut" }
-        }}
       >
         {/* Absolute positioned link for SEO and accessibility - only for non-REALM papers */}
         {link && !isRealmPaper && (
@@ -92,8 +87,8 @@ export default function ResearchCard({
           </a>
         )}
         
-        <h3 className="text-xl font-bold text-gray-800 group-hover:text-gray-600 dark:text-white 
-                      dark:group-hover:text-gray-300 transition-all duration-150">
+        <h3 className="text-xl font-bold text-gray-800 group-hover:text-primary-600 dark:text-white 
+                      dark:group-hover:text-primary-400 transition-all duration-150">
           {title}
         </h3>
         
@@ -118,8 +113,8 @@ export default function ResearchCard({
           {tags.map((tag, tagIndex) => (
             <span
               key={tagIndex}
-              className="bg-blue-600/80 dark:bg-black/[0.7] px-3 py-1 text-[0.7rem] 
-                        uppercase tracking-wider text-white rounded-full dark:text-white/70"
+              className="bg-secondary-600 dark:bg-secondary-800 px-3 py-1 text-[0.7rem] 
+                        uppercase tracking-wider text-white rounded-full shadow-sm dark:text-white/95 transition-all duration-150"
             >
               {tag}
             </span>

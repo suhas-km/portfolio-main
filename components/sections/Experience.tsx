@@ -32,8 +32,8 @@ function ExperienceCard({
     <motion.div 
       key={index}
       ref={itemRef}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       transition={{ 
         duration: 0.5, 
         delay: index * 0.1,
@@ -44,7 +44,6 @@ function ExperienceCard({
     >
       <Card 
         onClick={() => handleCardClick(index)}
-        whileHover={{ y: -5 }}
         layout
         className="p-0"
       >

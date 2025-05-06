@@ -63,7 +63,7 @@ export default function Popup({ isOpen, onClose, message }: PopupProps) {
               <p className="text-gray-800 dark:text-white font-medium">{message}</p>
               <button 
                 onClick={onClose}
-                className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm"
+                className="mt-4 btn-secondary px-4 py-2 rounded text-sm"
               >
                 Close
               </button>

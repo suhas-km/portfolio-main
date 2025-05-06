@@ -4,6 +4,28 @@
 
 html {
   --line-color: #e5e7eb;
+  --primary-color: #4f46e5; /* indigo-600 */
+  --primary-color-light: #818cf8; /* indigo-400 */
+  --primary-hover: #4338ca; /* indigo-700 */
+  --secondary-color: #2563eb; /* blue-600 */
+  --secondary-color-light: #60a5fa; /* blue-400 */
+  --secondary-hover: #1d4ed8; /* blue-700 */
+  --background-light: #ffffff;
+  --background-dark: #0f172a; /* slate-900 */
+  --card-light: #f8fafc; /* slate-50 */
+  --card-dark: #1e293b; /* slate-800 */
+  --text-primary-light: #1e293b; /* slate-800 */
+  --text-primary-dark: #f1f5f9; /* slate-100 */
+  --text-secondary-light: #475569; /* slate-600 */
+  --text-secondary-dark: #94a3b8; /* slate-400 */
+  --card-bg-light: rgba(255, 255, 255, 0.9);
+  --card-bg-dark: rgba(31, 41, 55, 0.4);
+  --card-bg-hover-light: #f9fafb;
+  --card-bg-hover-dark: rgba(31, 41, 55, 0.6);
+  --card-border-light: #e5e7eb;
+  --card-border-dark: rgba(31, 41, 55, 0.5);
+  --box-shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --box-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 html.dark {
@@ -22,7 +44,7 @@ html.dark {
   bottom: 0;
   left: 50%;
   width: 3px;
-  background: linear-gradient(to bottom, #60a5fa, #3b82f6, #2563eb);
+  background: linear-gradient(to bottom, var(--secondary-color-light), var(--secondary-color), var(--secondary-hover));
   transform: translateX(-50%);
   border-radius: 999px;
   opacity: 0.7;
@@ -31,7 +53,7 @@ html.dark {
 }
 
 .dark .experience-timeline::before {
-  background: linear-gradient(to bottom, #93c5fd, #3b82f6, #1e40af);
+  background: linear-gradient(to bottom, var(--secondary-color-light), var(--secondary-color), var(--secondary-hover));
   opacity: 0.85;
   box-shadow: 0 0 14px rgba(59, 130, 246, 0.6);
 }
@@ -59,25 +81,25 @@ html.dark {
 
 /* Light theme hover effects */
 html:not(.dark) .experience-timeline-element:hover .vertical-timeline-element-content {
-  background: #e5e7eb !important;
-  border-left: 4px solid #6366f1 !important;
+  background: var(--card-light) !important;
+  border-left: 4px solid var(--primary-color) !important;
 }
 
 /* Dark theme hover effects */
 html.dark .experience-timeline-element:hover .vertical-timeline-element-content {
-  background: rgba(30, 41, 59, 0.7) !important;
-  border-left: 4px solid rgba(99, 102, 241, 0.8) !important;
+  background: var(--card-dark) !important;
+  border-left: 4px solid var(--primary-color-light) !important;
 }
 
 /* Radiant text animation */
 .radiant-text {
   background: linear-gradient(90deg, 
     #dc2626, /* red-600 */
-    #ea580c, /* orange-600 */
-    #c026d3, /* fuchsia-600 */
+    #9333ea, /* purple-600 */
+    #ec4899, /* pink-500 */
+    #d97706, /* amber-600 */
     #db2777, /* pink-600 */
-    #be123c, /* rose-700 */
-    #dc2626  /* back to red-600 */
+    #b45309  /* amber-700 */
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -85,6 +107,7 @@ html.dark .experience-timeline-element:hover .vertical-timeline-element-content 
   color: transparent;
   -webkit-text-fill-color: transparent;
   position: relative;
+  animation: gradient-shift 8s ease infinite;
 }
 
 .radiant-text::after {
@@ -96,21 +119,28 @@ html.dark .experience-timeline-element:hover .vertical-timeline-element-content 
   height: 3px;
   background: linear-gradient(90deg, 
     #dc2626, /* red-600 */
-    #ea580c, /* orange-600 */
-    #c026d3, /* fuchsia-600 */
+    #9333ea, /* purple-600 */
+    #ec4899, /* pink-500 */
+    #d97706, /* amber-600 */
     #db2777, /* pink-600 */
-    #be123c, /* rose-700 */
-    #dc2626  /* back to red-600 */
+    #b45309  /* amber-700 */
   );
   background-size: 300% 100%;
   opacity: 0.7;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease-out;
+  animation: gradient-shift 8s ease infinite;
 }
 
 .radiant-text:hover::after {
   transform: scaleX(1);
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Styled paragraph for intro section */
@@ -122,12 +152,12 @@ html.dark .experience-timeline-element:hover .vertical-timeline-element-content 
   font-weight: 600;
   position: relative;
   display: inline-block;
-  color: #4f46e5; /* indigo-600 */
+  color: var(--primary-color); /* Using CSS variable */
   margin-right: 0.25rem;
 }
 
 html.dark .highlighted-text {
-  color: #818cf8; /* indigo-400 */
+  color: var(--primary-color-light); /* Using CSS variable */
 }
 
 .styled-paragraph span {
@@ -149,4 +179,72 @@ html.dark .highlighted-text {
 
 .animate-pulse-slow {
   animation: pulse-slow 3s infinite ease-in-out;
+}
+
+/* Consistent styling utility classes */
+/* Card light style */
+.card-light {
+  background-color: var(--card-bg-light);
+  border: 1px solid var(--card-border-light);
+  box-shadow: var(--box-shadow-light);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.card-light:hover {
+  background-color: var(--card-bg-hover-light);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Card dark style */
+html.dark .card-dark {
+  background-color: var(--card-bg-dark);
+  border-color: var(--card-border-dark);
+}
+
+html.dark .card-dark:hover {
+  background-color: var(--card-bg-hover-dark);
+}
+
+/* Button primary style */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  transition-property: background-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+html.dark .btn-primary {
+  background-color: var(--primary-color-light);
+}
+
+html.dark .btn-primary:hover {
+  background-color: var(--primary-color);
+}
+
+/* Button secondary style */
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+  transition-property: background-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+html.dark .btn-secondary {
+  background-color: var(--secondary-color-light);
+}
+
+html.dark .btn-secondary:hover {
+  background-color: var(--secondary-color);
 }
