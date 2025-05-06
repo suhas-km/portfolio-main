@@ -17,7 +17,7 @@ export default function Research() {
       sectionName="Research"
       className="mb-28"
     >
-      <div className="space-y-8">
+      <div className="space-y-10 max-w-[100rem] mx-auto">
         {researchData.map((research, index) => (
           <ResearchCard 
             key={index}

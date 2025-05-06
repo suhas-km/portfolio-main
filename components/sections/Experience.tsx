@@ -42,16 +42,6 @@ function ExperienceCard({
       viewport={{ once: true, margin: "-100px" }}
       className="relative pl-10"
     >
-      {/* Timeline connection dot */}
-      <div className="absolute left-4 top-6 w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-700 transform -translate-x-1/2 z-10"></div>
-      {/* Glowing dot for active timeline item */}
-      {isActive && (
-        <motion.div 
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          className="absolute left-4 top-6 w-3 h-3 rounded-full bg-blue-500 transform -translate-x-1/2 z-20 shadow-[0_0_8px_rgba(59,130,246,0.7)] dark:shadow-[0_0_12px_rgba(59,130,246,0.9)]"
-        />
-      )}
       <Card 
         onClick={() => handleCardClick(index)}
         whileHover={{ y: -5 }}
@@ -155,11 +145,34 @@ export default function Experience() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Track scroll progress for the entire section
+  // Track scroll progress for the entire section with improved offset for smoother animation
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
+    smooth: 16 // Smoother scrolling effect
   });
+  
+  // State to track the current scroll progress percentage for the bright spot
+  const [beamEndPosition, setBeamEndPosition] = useState(0);
+  
+  // Update the bright spot position whenever scroll changes
+  useEffect(() => {
+    // Function to update bright spot position based on scroll
+    const updatePosition = () => {
+      setBeamEndPosition(scrollYProgress.get() * 100);
+    };
+    
+    // Set up a listener for scrollYProgress changes
+    const unsubscribe = scrollYProgress.on('change', updatePosition);
+    
+    // Call once to initialize
+    updatePosition();
+    
+    // Cleanup listener on unmount
+    return () => {
+      unsubscribe();
+    };
+  }, [scrollYProgress]);
 
   // Set up observers to track which elements are in view
   useEffect(() => {
@@ -217,22 +230,71 @@ export default function Experience() {
       className="mb-16 sm:mb-24"
     >
       <div ref={sectionRef} className="relative space-y-10">
-        {/* Lightsaber timeline */}
-        <div className="absolute left-4 top-0 bottom-0 w-1 bg-gray-200 dark:bg-gray-800 rounded-full z-[1] overflow-hidden">
-          {/* Base lightsaber handle */}
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3 h-6 rounded-full bg-gray-400 dark:bg-gray-700 z-0" />
+        {/* Lightsaber timeline - Star Wars style */}
+        <div className="absolute left-4 top-0 bottom-0 w-1 bg-gray-300 dark:bg-gray-800 rounded-full z-[1] overflow-visible">
           
-          {/* Glowing effect */}
+          {/* Base beam layer - provides the background glow */}
           <motion.div 
-            className="absolute top-0 left-0 right-0 bg-gradient-to-b from-blue-500 via-blue-400 to-blue-200 dark:from-blue-600 dark:via-blue-500 dark:to-blue-300 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)] dark:shadow-[0_0_15px_rgba(59,130,246,0.7)] h-full origin-top"
+            className="absolute top-0 left-0 right-0 bg-blue-600 dark:bg-blue-500 rounded-full h-full origin-top"
             style={{ 
               scaleY: scrollYProgress,
-              filter: 'blur(2px)',
+              filter: 'blur(6px)',
+              opacity: 0.4,
+              width: '8px',
+              left: '50%',
+              transform: 'translateX(-50%)'
             }}
           />
+          
+          {/* Main beam glow */}
           <motion.div 
-            className="absolute top-0 left-0 right-0 bg-blue-500 dark:bg-blue-400 rounded-full opacity-70 h-full origin-top"
-            style={{ scaleY: scrollYProgress }}
+            className="absolute top-0 left-0 right-0 bg-blue-500 dark:bg-blue-400 rounded-full h-full origin-top"
+            style={{ 
+              scaleY: scrollYProgress,
+              filter: 'blur(3px)',
+              opacity: 0.8,
+              width: '4px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              boxShadow: '0 0 15px 3px rgba(59,130,246,0.9), 0 0 25px rgba(37,99,235,0.6)'
+            }}
+          />
+          
+          {/* Intense blue core */}
+          <motion.div 
+            className="absolute top-0 left-0 right-0 bg-blue-300 rounded-full h-full origin-top"
+            style={{ 
+              scaleY: scrollYProgress,
+              filter: 'blur(1px)',
+              opacity: 0.9,
+              width: '2px',
+              left: '50%',
+              transform: 'translateX(-50%)'
+            }}
+          />
+          
+          {/* Center white core - the brightest part */}
+          <motion.div 
+            className="absolute top-0 left-0 right-0 bg-white rounded-full h-full origin-top"
+            style={{ 
+              scaleY: scrollYProgress,
+              opacity: 1,
+              width: '1px',
+              left: '50%',
+              transform: 'translateX(-50%)'
+            }}
+          />
+          
+          {/* Bright spot that moves with scroll at the end of the illuminated beam */}
+          <div
+            className="absolute w-5 h-5 rounded-full bg-white z-10"
+            style={{
+              top: `calc(${beamEndPosition}% - 2.5px)`, // Use state variable that updates with scroll
+              left: '50%',
+              transform: 'translateX(-50%)',
+              boxShadow: '0 0 10px 3px rgba(255,255,255,0.9), 0 0 15px 5px rgba(59,130,246,0.7), 0 0 25px rgba(37,99,235,0.6)',
+              opacity: beamEndPosition > 1 ? 1 : 0,
+            }}
           />
         </div>
         

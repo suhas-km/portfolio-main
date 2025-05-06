@@ -13,9 +13,9 @@ export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
   
   return (
-    <section id="projects" ref={ref} className="scroll-mt-28 mb-28">
+    <section id="projects" ref={ref} className="scroll-mt-28 mb-24">
       <SectionHeading>Projects</SectionHeading>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-[85rem] mx-auto px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-8 lg:gap-y-8 max-w-[80rem] mx-auto px-4">
         {projectsData.map((project, index) => (
           <ProjectCard key={index} {...project} index={index} />
         ))}

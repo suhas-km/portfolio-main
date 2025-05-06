@@ -42,8 +42,8 @@ export default function ResearchCard({
   return (
     <motion.div
       className="bg-white/80 hover:bg-gray-100 border border-gray-200 dark:border-transparent 
-                dark:bg-white/10 dark:hover:bg-white/20 transition-all duration-150 p-6 rounded-xl 
-                shadow-md hover:shadow-lg relative group cursor-pointer"
+                dark:bg-white/10 dark:hover:bg-white/20 transition-all duration-150 p-8 rounded-xl 
+                shadow-md hover:shadow-lg relative group cursor-pointer w-full mx-auto"
       variants={fadeInAnimationVariants}
       initial="initial"
       whileInView="animate"
