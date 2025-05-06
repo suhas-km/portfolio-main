@@ -1,16 +1,19 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaBrain, FaLaptopCode } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import { BiCodeBlock } from "react-icons/bi";
+import { SiNextdotjs } from "react-icons/si";
+import { MdScience } from "react-icons/md";
+
+// Image imports
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
-import { FaLaptopCode } from "react-icons/fa";
-import { BiCodeBlock } from "react-icons/bi";
-import { SiNextdotjs } from "react-icons/si";
 import scorepointImg from "@/public/scorepoint.png";
-import { MdScience } from "react-icons/md";
-import { FaBrain } from "react-icons/fa";
+
+// Type imports
+import { ExperienceItem, NavLink, ProjectItem, ResearchItem, SkillsData } from "./types";
 
 export const links = [
   {
@@ -39,14 +42,7 @@ export const links = [
   },
 ] as const;
 
-export interface ExperienceItem {
-  title: string;
-  location: string;
-  description: string[] | string;
-  icon: React.ReactNode;
-  date: string;
-  skills?: string[];
-}
+// ExperienceItem is now imported from ./types
 
 export const experiencesData: ExperienceItem[] = [
   {

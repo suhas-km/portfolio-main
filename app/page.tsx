@@ -1,11 +1,14 @@
-import About from "@/components/about";
-import Contact from "@/components/contact";
-import Experience from "@/components/experience";
-import Intro from "@/components/intro";
-import Projects from "@/components/projects";
-import Research from "@/components/research";
-import SectionDivider from "@/components/section-divider";
-import Skills from "@/components/skills";
+// Import components using our new structure
+import {
+  About,
+  Contact,
+  Experience,
+  Intro,
+  Projects,
+  Research,
+  SectionDivider,
+  Skills
+} from "@/components";
 
 export default function Home() {
   return (
