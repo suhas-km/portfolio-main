@@ -40,7 +40,7 @@ export const links = [
     name: "Contact",
     hash: "#contact",
   },
-] as const;
+];
 
 // ExperienceItem is now imported from ./types
 
@@ -106,19 +106,20 @@ export const experiencesData: ExperienceItem[] = [
     icon: React.createElement(CgWorkAlt, {}),
     date: "August 2022 - September 2023",
   },
-] as const;
+];
 
 export const projectsData = [
   {
     title: "QueryMaster AI",
     description:
       "AI app to achieve over 90% accuracy in translating natural language into SQL queries, enhancing data accessibility for non-technical users.",
-    tags: ["LLM", "SQLite", "Prompt Engineering", "LangChain", "Docker", "Agentic AI"],
+    tags: ["Python", "LangChain", "OpenAI", "Vector DB", "FastAPI"],
     imageUrl: wordanalyticsImg,
-    githubUrl: "https://github.com/suhas-km/QueryMaster-AI"
+    githubUrl: "https://github.com/suhas-km/QueryMaster",
+    demoUrl: "https://query-master-demo.vercel.app/"
   },
   {
-    title: "DC SafeHouseSeeker AI",
+    title: "SafeHomeSeeker AI",
     description:
       "DC SafeHouseFinder AI: Built during aiXplain's Hackathon, provides personalized housing recommendations using AI and geospatial tech.",
     tags: ["AI Agents", "Vector DB", "aiXplain"],
@@ -149,7 +150,7 @@ export const projectsData = [
   //   tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
   //   imageUrl: rmtdevImg,
   // },
-] as const;
+];
 
 export const researchData = [
   {
@@ -182,7 +183,7 @@ export const researchData = [
   //   tags: ["Machine Learning", "Urban Planning", "Sustainability"],
   //   link: "https://arxiv.org/abs/2503.22742"
   // },
-] as const;
+];
 
 export const skillsData = {
   programming: [
@@ -246,5 +247,5 @@ export const skillsData = {
     "Client Presentations",
     "Agile",
   ],
-} as const;
+};
 
