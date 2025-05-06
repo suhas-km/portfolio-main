@@ -14,7 +14,8 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 const keywords = ["Data Scientist", "Cloud Certified Software Engineer", "AI/ML Research & Development"];
 
 export default function Intro() {
-  const { ref } = useSectionInView("Home", 0.5);
+  // Using a lower threshold for Home to detect it earlier when scrolling up
+  const { ref } = useSectionInView("Home", 0.2);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const [keywordIndex, setKeywordIndex] = useState(0);
   const [scope, animate] = useAnimate();
@@ -40,7 +41,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-16 max-w-[70rem] sm:mb-0 scroll-mt-[100rem] px-4"
+      className="flex flex-col justify-between max-w-[70rem] scroll-mt-28 px-4 min-h-[85vh] mb-10"
     >
       <div className="flex flex-col-reverse md:flex-row items-center md:items-center justify-between gap-16 py-12">
         <div className="flex-1">
@@ -187,9 +188,9 @@ export default function Intro() {
         </div>
       </div>
 
-      {/* Scroll down indicator with vertical line */}
+      {/* Scroll down indicator */}
       <motion.div 
-        className="flex flex-col items-center w-full mt-8 mb-4"
+        className="flex flex-col items-center w-full mt-auto mb-8"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
@@ -203,7 +204,7 @@ export default function Intro() {
           }}
           aria-label="Scroll to About section"
         >
-          <span className="text-sm font-semibold mb-2 text-gray-800 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Scroll Down</span>
+          <span className="text-base font-semibold mb-2 text-gray-800 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Scroll Down</span>
           <motion.div 
             className="w-8 h-8 rounded-full border-2 border-blue-500/80 dark:border-blue-400/80 bg-white dark:bg-gray-800 flex items-center justify-center group-hover:border-blue-600 dark:group-hover:border-blue-400 transition-colors duration-300 shadow-sm"
             animate={{ y: [0, 10, 0] }}
@@ -224,7 +225,6 @@ export default function Intro() {
             </svg>
           </motion.div>
         </Link>
-        {/* No additional vertical line needed */}
       </motion.div>
     </section>
   );

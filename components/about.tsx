@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -8,14 +8,11 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function About() {
   const { ref } = useSectionInView("About");
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   
-  // Removed forced About section activation on page load
-
   return (
     <motion.section
       ref={ref}
-      className="mb-12 max-w-[65rem] sm:mb-20 scroll-mt-28 px-4"
+      className="mb-16 max-w-[65rem] sm:mb-24 scroll-mt-28 px-4"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
@@ -24,18 +21,24 @@ export default function About() {
       <SectionHeading className="mb-8 text-center text-gray-900 dark:text-white">
         About Me
       </SectionHeading>
-      <div className="max-w-[60rem] mx-auto">
-        <p className="mb-3 text-base sm:text-lg text-justify leading-relaxed">
-          I'm <span className="font-medium">Suhas - An engineer with proven expertise in AI Research, Cloud-native Software Development, and Teaching Excellence</span>
+      
+      <div className="max-w-[60rem] mx-auto rounded-xl bg-white/60 dark:bg-black p-8 border border-gray-200 dark:border-gray-800/50 shadow-md">
+        {/* Subtle accent line */}
+        <div className="w-24 h-1 bg-blue-600 dark:bg-blue-500 mb-8 rounded-full mx-auto opacity-80"></div>
+        
+        <p className="mb-6 text-base sm:text-lg leading-relaxed text-center mx-auto max-w-4xl">
+          I'm <span className="font-semibold text-blue-700 dark:text-blue-400">Suhas</span> — An engineer with proven expertise in AI Research, Cloud-native Software Development, and Teaching Excellence.
         </p>
 
-        <p className="mb-3 text-base sm:text-lg text-justify leading-relaxed">
-          I specialize in designing <span className="font-medium">intelligent, scalable software</span> that blends rigorous problem-solving with real-world application. With a background in <span className="font-medium">software engineering, data science, and machine learning</span>, I navigate across abstraction layers — from high-level design to low-level optimization.
-        </p>
+        <div className="mt-8 space-y-6">
+          <p className="mb-4 text-base sm:text-lg leading-relaxed text-gray-800 dark:text-gray-300">
+            I specialize in designing <span className="font-medium">intelligent, scalable software</span> that blends rigorous problem-solving with real-world application. With a background in <span className="font-medium">software engineering, data science, and machine learning</span>, I navigate across abstraction layers — from high-level design to low-level optimization.
+          </p>
 
-        <p className="text-base sm:text-lg text-justify leading-relaxed">
-          My approach is rooted in <span className="font-medium">analytical thinking</span>: understanding patterns, reducing complexity, and building reliable solutions that adapt and evolve. Whether working on <span className="font-medium">cloud-native architectures</span> or research-driven <span className="font-medium">AI systems</span>, I value clarity, efficiency, and continuous learning.
-        </p>
+          <p className="text-base sm:text-lg leading-relaxed text-gray-800 dark:text-gray-300">
+            My approach is rooted in <span className="font-medium">analytical thinking</span>: understanding patterns, reducing complexity, and building reliable solutions that adapt and evolve. Whether working on <span className="font-medium">cloud-native architectures</span> or research-driven <span className="font-medium">AI systems</span>, I value clarity, efficiency, and continuous learning.
+          </p>
+        </div>
       </div>
     </motion.section>
   );
