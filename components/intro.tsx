@@ -41,9 +41,9 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="flex flex-col justify-between max-w-[70rem] scroll-mt-28 px-4 min-h-[85vh] mb-10"
+      className="flex flex-col relative max-w-[80rem] mx-auto scroll-mt-16 px-4 min-h-[85vh] mb-0 pt-4"
     >
-      <div className="flex flex-col-reverse md:flex-row items-center md:items-center justify-between gap-16 py-12">
+      <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-between gap-8 md:gap-12 pt-2 pb-2 md:pt-4 md:pb-4 relative">
         <div className="flex-1">
           <motion.div
             className="text-left"
@@ -52,7 +52,7 @@ export default function Intro() {
             transition={{ duration: 0.5 }}
           >
             <motion.span 
-              className="inline-block font-light text-lg mb-3 text-gray-500 dark:text-gray-300 tracking-wider"
+              className="inline-block font-light text-xl mb-4 text-gray-500 dark:text-gray-300 tracking-wider"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -61,7 +61,7 @@ export default function Intro() {
             </motion.span>
 
             <motion.h1
-              className="font-bold text-4xl sm:text-6xl block mb-5 leading-tight"
+              className="font-bold text-5xl sm:text-7xl block mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -80,6 +80,7 @@ export default function Intro() {
                 }}
                 whileHover={{
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  opacity: 0.9,
                   transition: {
                     repeat: Infinity, 
                     duration: 1.5,
@@ -91,10 +92,10 @@ export default function Intro() {
               </motion.span>
             </motion.h1>
             
-            <div className="h-8 mb-5" ref={scope}>
+            <div className="h-10 mb-6" ref={scope}>
               <motion.span 
                 key={keywordIndex}
-                className="font-medium text-xl sm:text-2xl text-blue-400 skill-word inline-block"
+                className="font-medium text-2xl sm:text-3xl text-blue-400 skill-word inline-block"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -105,24 +106,24 @@ export default function Intro() {
             </div>
             
             <motion.div
-              className="text-gray-600 dark:text-gray-300 mt-4 mb-8 flex flex-col w-full"
+              className="text-gray-600 dark:text-gray-300 mt-6 mb-10 flex flex-col w-full max-w-3xl"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <p className="text-base mb-3">Transforming complex challenges into elegant solutions across AI, software engineering, and cloud infrastructure</p>
-              <p className="text-base">Passionate about building innovative technologies that create meaningful impact in our increasingly digital world</p>
+              <p className="text-lg md:text-xl mb-4">Transforming complex challenges into elegant solutions across AI, software engineering, and cloud infrastructure</p>
+              <p className="text-lg md:text-xl">Passionate about building innovative technologies that create meaningful impact in our increasingly digital world</p>
             </motion.div>
             
             <motion.div
-              className="flex flex-wrap items-center gap-4 mt-4 w-full"
+              className="flex flex-wrap items-center gap-5 mt-6 w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
               <Link
                 href="#contact"
-                className="group bg-blue-600 text-white px-6 py-3 flex items-center gap-2 rounded-md outline-none focus:scale-105 hover:scale-105 hover:bg-blue-700 active:scale-100 transition-all text-sm font-medium"
+                className="group bg-blue-600 text-white px-7 py-4 flex items-center gap-2 rounded-md outline-none focus:scale-105 hover:scale-105 hover:bg-blue-700 active:scale-100 transition-all text-base font-medium"
                 onClick={() => {
                   setActiveSection("Contact");
                   setTimeOfLastClick(Date.now());
@@ -132,7 +133,7 @@ export default function Intro() {
               </Link>
 
               <a
-                className="group bg-transparent border border-gray-500 dark:border-gray-600 px-6 py-3 flex items-center gap-2 rounded-md outline-none focus:scale-105 hover:scale-105 hover:border-gray-800 dark:hover:border-white active:scale-100 transition-all text-sm font-medium text-gray-700 dark:text-white"
+                className="group bg-transparent border border-gray-500 dark:border-gray-600 px-7 py-4 flex items-center gap-2 rounded-md outline-none focus:scale-105 hover:scale-105 hover:border-gray-800 dark:hover:border-white active:scale-100 transition-all text-base font-medium text-gray-700 dark:text-white"
                 href="/CV.pdf"
                 download
               >
@@ -141,7 +142,7 @@ export default function Intro() {
 
               <div className="flex gap-3 ml-1">
                 <a
-                  className="bg-transparent text-gray-500 dark:text-gray-400 hover:text-[#0077B5] dark:hover:text-[#0077B5] flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer p-2 text-2xl"
+                  className="bg-transparent text-gray-500 dark:text-gray-400 hover:text-[#0077B5] dark:hover:text-[#0077B5] flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer p-2 text-3xl"
                   href="https://www.linkedin.com/in/suhaskm/"
                   target="_blank"
                   aria-label="LinkedIn Profile"
@@ -150,7 +151,7 @@ export default function Intro() {
                 </a>
 
                 <a
-                  className="bg-transparent text-gray-500 dark:text-gray-400 hover:text-[#333] dark:hover:text-white flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer p-2 text-2xl"
+                  className="bg-transparent text-gray-500 dark:text-gray-400 hover:text-[#333] dark:hover:text-white flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer p-2 text-3xl"
                   href="https://github.com/suhas-km"
                   target="_blank"
                   aria-label="GitHub Profile"
@@ -162,7 +163,7 @@ export default function Intro() {
           </motion.div>
         </div>
         
-        <div className="md:flex-1 flex justify-center md:justify-end">
+        <div className="md:flex-1 flex justify-center md:justify-start">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -172,9 +173,9 @@ export default function Intro() {
               damping: 20,
               delay: 0.2,
             }}
-            className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] overflow-hidden rounded-2xl border-[0.25rem] border-blue-600/30 dark:border-blue-900/30 shadow-xl shadow-blue-700/10 dark:shadow-2xl dark:shadow-blue-900/20"
+            className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] overflow-hidden rounded-2xl border-[0.35rem] border-blue-600/30 dark:border-blue-900/30 shadow-xl shadow-blue-700/10 dark:shadow-2xl dark:shadow-blue-900/20"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-700/20 dark:from-blue-900/20 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-700/5 dark:from-blue-900/5 to-transparent z-10" />
             <Image
               src="/FA720AE6-044D-450F-A771-077E3E84DD43_1_201_a.jpeg"
               alt="Portrait of Suhas"
@@ -187,13 +188,13 @@ export default function Intro() {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll down indicator */}
+      
+      {/* Simple Scroll Down Indicator - Positioned better */}
       <motion.div 
-        className="flex flex-col items-center w-full mt-auto mb-8"
+        className="absolute bottom-16 left-0 right-0 flex justify-center z-10"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7 }}
+        transition={{ delay: 0.5 }}
       >
         <Link
           href="#about"
@@ -202,26 +203,26 @@ export default function Intro() {
             setActiveSection("About");
             setTimeOfLastClick(Date.now());
           }}
-          aria-label="Scroll to About section"
         >
-          <span className="text-base font-semibold mb-2 text-gray-800 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Scroll Down</span>
-          <motion.div 
-            className="w-8 h-8 rounded-full border-2 border-blue-500/80 dark:border-blue-400/80 bg-white dark:bg-gray-800 flex items-center justify-center group-hover:border-blue-600 dark:group-hover:border-blue-400 transition-colors duration-300 shadow-sm"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ 
-              repeat: Infinity, 
-              duration: 2,
-              repeatType: "loop",
-              ease: "easeInOut" 
-            }}
+          <span className="text-base font-medium text-gray-600 dark:text-gray-300 mb-2">Scroll Down</span>
+          <motion.div
+            className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-600 text-white"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
           >
-            <svg 
-              className="w-4 h-4 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300" 
-              fill="none" 
-              viewBox="0 0 24 24" 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
               stroke="currentColor"
+              className="w-4 h-4"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
             </svg>
           </motion.div>
         </Link>

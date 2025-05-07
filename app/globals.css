@@ -126,7 +126,7 @@ html.dark .experience-timeline-element:hover .vertical-timeline-element-content 
     #b45309  /* amber-700 */
   );
   background-size: 300% 100%;
-  opacity: 0.7;
+  opacity: 0.4;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease-out;
