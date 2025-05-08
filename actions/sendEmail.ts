@@ -37,6 +37,14 @@ export const sendEmail = async (formData: FormData) => {
 
   let data;
   try {
+    // Check if API key is configured properly
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not defined");
+      return {
+        error: "Email configuration error. Please contact the administrator.",
+      };
+    }
+
     data = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: "suhaskm23@gmail.com",
@@ -49,7 +57,17 @@ export const sendEmail = async (formData: FormData) => {
         subject: subject,
       }),
     });
+    
+    // Check response validity
+    if (!data || !data.id) {
+      console.error("Undefined response from Resend API", data);
+      return {
+        error: "Failed to send email. Please try again later.",
+      };
+    }
+    
   } catch (error: unknown) {
+    console.error("Resend API error:", error);
     return {
       error: getErrorMessage(error),
     };
