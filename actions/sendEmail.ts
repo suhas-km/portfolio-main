@@ -8,44 +8,45 @@ import ContactFormEmail from "@/email/contact-form-email";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (formData: FormData) => {
-  const senderName = formData.get("senderName");
-  const senderEmail = formData.get("senderEmail");
-  const subject = formData.get("subject");
-  const message = formData.get("message");
-
-  // simple server-side validation
-  if (!validateString(senderName, 100)) {
-    return {
-      error: "Invalid name",
-    };
-  }
-  if (!validateString(senderEmail, 500)) {
-    return {
-      error: "Invalid sender email",
-    };
-  }
-  if (!validateString(subject, 200)) {
-    return {
-      error: "Invalid subject",
-    };
-  }
-  if (!validateString(message, 5000)) {
-    return {
-      error: "Invalid message",
-    };
-  }
-
-  let data;
   try {
+    // Get form data
+    const senderName = formData.get("senderName");
+    const senderEmail = formData.get("senderEmail");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+
+    // Validate form data
+    if (!validateString(senderName, 100)) {
+      return {
+        error: "Please provide a valid name (max 100 characters)",
+      };
+    }
+    if (!validateString(senderEmail, 500)) {
+      return {
+        error: "Please provide a valid email address (max 500 characters)",
+      };
+    }
+    if (!validateString(subject, 200)) {
+      return {
+        error: "Please provide a subject (max 200 characters)",
+      };
+    }
+    if (!validateString(message, 5000)) {
+      return {
+        error: "Please provide a message (max 5000 characters)",
+      };
+    }
+
     // Check if API key is configured properly
     if (!process.env.RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not defined");
       return {
-        error: "Email configuration error. Please contact the administrator.",
+        error: "Email service is currently unavailable. Please try again later.",
       };
     }
 
-    data = await resend.emails.send({
+    // Send email
+    const data = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: "suhaskm23@gmail.com",
       subject: `${subject} from ${senderName}`,
@@ -57,23 +58,23 @@ export const sendEmail = async (formData: FormData) => {
         subject: subject,
       }),
     });
-    
-    // Check response validity
+
+    // Validate response
     if (!data || !data.id) {
-      console.error("Undefined response from Resend API", data);
+      console.error("Invalid response from email service", data);
       return {
         error: "Failed to send email. Please try again later.",
       };
     }
-    
-  } catch (error: unknown) {
-    console.error("Resend API error:", error);
+
     return {
-      error: getErrorMessage(error),
+      data,
+    };
+
+  } catch (error: unknown) {
+    console.error("Error sending email:", error);
+    return {
+      error: "Failed to send email. Please try again later.",
     };
   }
-
-  return {
-    data,
-  };
 };
