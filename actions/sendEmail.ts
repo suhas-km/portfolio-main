@@ -37,44 +37,43 @@ export const sendEmail = async (formData: FormData) => {
       };
     }
 
-    // Check if API key is configured properly
-    if (!process.env.RESEND_API_KEY) {
-      console.error("RESEND_API_KEY is not defined");
+    try {
+      // Send email
+      const data = await resend.emails.send({
+        from: "Contact Form <onboarding@resend.dev>",
+        to: "suhaskm23@gmail.com",
+        subject: `${subject} from ${senderName}`,
+        reply_to: senderEmail,
+        react: React.createElement(ContactFormEmail, {
+          message: message,
+          senderEmail: senderEmail,
+          senderName: senderName,
+          subject: subject,
+        }),
+      });
+
+      // Validate response
+      if (!data || !data.id) {
+        console.error("Invalid response from email service", data);
+        return {
+          error: "Failed to send email. Please try again later.",
+        };
+      }
+
       return {
-        error: "Email service is currently unavailable. Please try again later.",
+        data,
       };
-    }
 
-    // Send email
-    const data = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: "suhaskm23@gmail.com",
-      subject: `${subject} from ${senderName}`,
-      reply_to: senderEmail,
-      react: React.createElement(ContactFormEmail, {
-        message: message,
-        senderEmail: senderEmail,
-        senderName: senderName,
-        subject: subject,
-      }),
-    });
-
-    // Validate response
-    if (!data || !data.id) {
-      console.error("Invalid response from email service", data);
+    } catch (error: unknown) {
+      console.error("Email sending failed:", error);
       return {
         error: "Failed to send email. Please try again later.",
       };
     }
-
-    return {
-      data,
-    };
-
   } catch (error: unknown) {
-    console.error("Error sending email:", error);
+    console.error("Form processing error:", error);
     return {
-      error: "Failed to send email. Please try again later.",
+      error: "Failed to process form. Please try again later.",
     };
   }
 };
