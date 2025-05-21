@@ -44,7 +44,6 @@ function ExperienceCard({
       className="relative pl-10"
     >
       <Card 
-        onClick={() => handleCardClick(index)}
         layout
         className="p-0"
       >
@@ -86,62 +85,33 @@ function ExperienceCard({
             </div>
           </div>
           
-          <AnimatePresence>
-            {(expandedIndex === index || expandedIndex === null) && (
-              <motion.div 
-                initial={expandedIndex !== null ? { height: 0, opacity: 0 } : false}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className={`mt-4 text-sm text-gray-600 dark:text-gray-300 ${expandedIndex !== index && expandedIndex !== null ? 'line-clamp-2' : ''}`}
-              >
-                {/* Display description as a list of bullet points */}
-                {typeof item.description === 'string' ? (
-                  <p>{item.description}</p>
-                ) : (
-                  <ul className="ml-1 mt-2 space-y-1.5 list-disc list-inside">
-                    {Array.isArray(item.description) && item.description.map((point, i) => (
-                      <li key={i} className="pl-0">
-                        <span className="text-sm">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                
-                {/* Skills/Tools used (optional) */}
-                {item.skills && (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {item.skills.map((skill, skillIndex) => (
-                      <span 
-                        key={skillIndex} 
-                        className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </motion.div>
+          <div className="mt-4 text-sm text-gray-600 dark:text-gray-300">
+            {/* Display description as a list of bullet points */}
+            {typeof item.description === 'string' ? (
+              <p>{item.description}</p>
+            ) : (
+              <ul className="ml-1 mt-2 space-y-1.5 list-disc list-inside">
+                {Array.isArray(item.description) && item.description.map((point, i) => (
+                  <li key={i} className="pl-0">
+                    <span className="text-sm">{point}</span>
+                  </li>
+                ))}
+              </ul>
             )}
-          </AnimatePresence>
-          
-          <button 
-            onClick={(e) => {
-              e.stopPropagation();
-              handleCardClick(index);
-            }} 
-            className={`mt-4 text-xs font-medium text-blue-600 dark:text-blue-400 flex items-center gap-1 ${expandedIndex === null ? 'hidden' : ''}`}
-          >
-            {expandedIndex === index ? 'Show less' : 'Read more'}
-            <svg 
-              className={`w-4 h-4 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''}`} 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+            {/* Skills/Tools used (optional) */}
+            {item.skills && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {item.skills.map((skill, skillIndex) => (
+                  <span 
+                    key={skillIndex} 
+                    className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </Card>
     </motion.div>
