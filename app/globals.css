@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 html {
+  --color-primary: #2563eb; /* blue-600 */
+  --color-primary-light: #60a5fa; /* blue-400 */
+  --color-primary-dark: #1d4ed8; /* blue-700 */
+  --color-accent: #ec4899; /* pink-500 */
+  --color-accent-light: #f472b6; /* pink-400 */
+  --color-bg: #ffffff;
+  --color-bg-dark: #0f172a; /* slate-900 */
+  --color-card-light: #f8fafc; /* slate-50 */
+  --color-card-dark: #1e293b; /* slate-800 */
+  --color-text: #1e293b; /* slate-800 */
+  --color-text-dark: #f1f5f9; /* slate-100 */
+  --color-border-light: #e5e7eb;
+  --color-border-dark: #1e293b;
+  --font-sans: 'Inter', 'Roboto', sans-serif;
   --line-color: #e5e7eb;
   --primary-color: #4f46e5; /* indigo-600 */
   --primary-color-light: #818cf8; /* indigo-400 */
@@ -29,7 +43,25 @@ html {
 }
 
 html.dark {
+  --color-bg: #0f172a;
+  --color-text: #f1f5f9;
   --line-color: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+p, li, span, a, button {
+  font-family: var(--font-sans);
 }
 
 .borderBlack {

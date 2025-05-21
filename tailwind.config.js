@@ -34,11 +34,18 @@ module.exports = {
           900: '#1e3a8a',
           950: '#172554',
         },
+        accent: {
+          500: '#ec4899', // pink-500
+          400: '#f472b6', // pink-400
+        },
         neutral: {
           light: '#f8fafc',
           medium: '#f1f5f9',
           dark: '#0f172a',
         }
+      },
+      fontFamily: {
+        sans: ['Inter', 'Roboto', 'sans-serif'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
