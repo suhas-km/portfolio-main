@@ -32,9 +32,9 @@ export default function Header() {
                 className={clsx(
                   "flex w-full items-center justify-center px-3 py-3 transition-all duration-300",
                   {
-                    "text-blue-700 dark:text-white font-semibold":
+                    "text-blue-700 dark:text-white font-medium":
                       activeSection === link.name,
-                    "text-gray-700 dark:text-white/90 hover:text-blue-600 dark:hover:text-blue-300":
+                    "text-gray-700 dark:text-white/90 hover:text-blue-600 dark:hover:text-blue-300 font-medium":
                       activeSection !== link.name,
                   }
                 )}

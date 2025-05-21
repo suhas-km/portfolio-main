@@ -26,8 +26,8 @@ export default function Research() {
       </SectionHeading>
       
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         className="w-full max-w-none px-4 md:px-8 lg:px-16 xl:px-24"
