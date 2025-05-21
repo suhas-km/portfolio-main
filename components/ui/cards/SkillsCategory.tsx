@@ -62,17 +62,11 @@ export default function SkillsCategory({ category, skills }: SkillsCategoryProps
   return (
     <motion.div 
       className="mb-6 relative p-6 rounded-xl bg-white/70 dark:bg-white/5 backdrop-blur-sm 
-                 border border-gray-200 dark:border-white/10 shadow-lg
-                 transition-all duration-150 hover:shadow-xl cursor-default"
+                 border border-gray-200 dark:border-white/10 shadow-lg cursor-default"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      whileHover={{
-        backgroundColor: theme === 'light' ? 'rgba(255, 255, 255, 0.6)' : 'rgba(255, 255, 255, 0.08)',
-        boxShadow: theme === 'light' ? '' : '0 8px 25px -5px rgba(59, 130, 246, 0.15)',
-        transition: { duration: 0.08 }
-      }}  
     >
       {/* Background gradient */}
       <div 
@@ -90,11 +84,10 @@ export default function SkillsCategory({ category, skills }: SkillsCategoryProps
         {skills.map((skill, index) => (
           <div
             key={`${category}-${skill}-${index}`}
-            className="backdrop-blur-sm rounded-lg px-3 py-2 
+            className="backdrop-blur-sm rounded-xl px-3 py-2 
                        border border-transparent
-                       text-white hover:border-white/30
-                       relative hover:z-20 flex items-center justify-center h-full
-                       transition-all duration-200"
+                       text-white
+                       relative flex items-center justify-center h-full"
             style={{
               background: `linear-gradient(to right, ${from}, ${to})`,
               boxShadow: `0 5px 15px -5px ${shadow}`
