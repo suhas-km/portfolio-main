@@ -41,9 +41,9 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="flex flex-col relative max-w-[80rem] mx-auto scroll-mt-16 px-4 min-h-[85vh] mb-0 pt-4"
+      className="flex flex-col relative max-w-[80rem] mx-auto scroll-mt-16 px-4 min-h-screen mb-0 pt-0"
     >
-      <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-between gap-8 md:gap-12 pt-2 pb-2 md:pt-4 md:pb-4 relative">
+      <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-center gap-6 md:gap-8 pt-0 pb-2 relative h-[calc(100vh-8rem)]">
         <div className="flex-1">
           <motion.div
             className="text-left"
@@ -115,14 +115,14 @@ export default function Intro() {
             </motion.div>
             
             <motion.div
-              className="flex flex-wrap items-center gap-5 mt-6 w-full"
+              className="flex flex-wrap items-center gap-4 mt-6 w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
               <Link
                 href="#contact"
-                className="group bg-blue-600 text-white px-7 py-4 flex items-center gap-2 rounded-md outline-none focus:scale-105 hover:scale-105 hover:bg-blue-700 active:scale-100 transition-all text-base font-medium"
+                className="group bg-blue-600 text-white px-6 py-3.5 flex items-center gap-2 rounded-md outline-none focus:scale-105 hover:scale-105 hover:bg-blue-700 active:scale-100 transition-all text-base font-medium h-14 min-w-[11rem] justify-center"
                 onClick={() => {
                   setActiveSection("Contact");
                   setTimeOfLastClick(Date.now());
@@ -132,7 +132,7 @@ export default function Intro() {
               </Link>
 
               <a
-                className="group bg-transparent border border-gray-500 dark:border-gray-600 px-7 py-4 flex items-center gap-2 rounded-md outline-none focus:scale-105 hover:scale-105 hover:border-gray-800 dark:hover:border-white active:scale-100 transition-all text-base font-medium text-gray-700 dark:text-white"
+                className="group bg-transparent border border-gray-500 dark:border-gray-600 px-6 py-3.5 flex items-center gap-2 rounded-md outline-none focus:scale-105 hover:scale-105 hover:border-gray-800 dark:hover:border-white active:scale-100 transition-all text-base font-medium text-gray-700 dark:text-white h-14 min-w-[11rem] justify-center"
                 href="/CV.pdf"
                 download
               >
@@ -162,7 +162,7 @@ export default function Intro() {
           </motion.div>
         </div>
         
-        <div className="md:flex-1 flex justify-center md:justify-start">
+        <div className="md:flex-1 flex justify-center items-center w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -172,7 +172,7 @@ export default function Intro() {
               damping: 20,
               delay: 0.2,
             }}
-            className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] overflow-hidden rounded-2xl border-[0.35rem] border-blue-600/30 dark:border-blue-900/30 shadow-xl shadow-blue-700/10 dark:shadow-2xl dark:shadow-blue-900/20"
+            className="relative w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] overflow-hidden rounded-2xl border-[0.35rem] border-blue-600/30 dark:border-blue-900/30 shadow-xl shadow-blue-700/10 dark:shadow-2xl dark:shadow-blue-900/20"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-700/5 dark:from-blue-900/5 to-transparent z-10" />
             <Image
@@ -188,12 +188,12 @@ export default function Intro() {
         </div>
       </div>
       
-      {/* Simple Scroll Down Indicator - Responsive */}
+      {/* Scroll Down Indicator */}
       <motion.div 
-        className="absolute left-0 right-0 flex justify-center z-10 bottom-10 sm:bottom-16"
+        className="absolute left-0 right-0 flex justify-center z-10 bottom-6 sm:bottom-8"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.7 }}
       >
         <Link
           href="#about"
@@ -203,26 +203,23 @@ export default function Intro() {
             setTimeOfLastClick(Date.now());
           }}
         >
-          <span className="text-base sm:text-base font-medium text-gray-600 dark:text-gray-300 mb-2">Scroll Down</span>
-          <motion.div
-            className="w-10 h-10 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-blue-600 text-white"
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
+          <motion.span 
+            className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1"
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{ repeat: Infinity, duration: 2 }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-6 h-6 sm:w-4 sm:h-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
+            Scroll down
+          </motion.span>
+          <motion.div
+            className="w-8 h-12 rounded-full border-2 border-gray-400 dark:border-gray-500 flex items-start justify-center p-1"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          >
+            <motion.div 
+              className="w-1 h-3 bg-gray-500 dark:bg-gray-400 rounded-full"
+              animate={{ y: [0, 4, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, delay: 0.2 }}
+            />
           </motion.div>
         </Link>
       </motion.div>

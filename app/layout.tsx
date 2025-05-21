@@ -33,7 +33,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} dark:bg-gray-950 dark:text-gray-100 bg-gradient-to-b from-[#f9f8ff] to-[#fff2fa] text-gray-800 relative pt-28 sm:pt-36 overflow-x-hidden`}
+        className={`${inter.className} dark:bg-gray-950 dark:text-gray-100 bg-gradient-to-b from-[#f9f8ff] to-[#fff2fa] text-gray-800 relative pt-16 sm:pt-20 overflow-x-hidden`}
       >
         {/* Enhanced background gradients */}
         <div className="absolute inset-0 -z-20 dark:bg-[linear-gradient(to_bottom,#0c0a20,#1a0c2e)] dark:opacity-95 bg-[linear-gradient(to_bottom,#f7f5ff,#fff1f9)] opacity-90"></div>

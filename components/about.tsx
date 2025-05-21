@@ -10,13 +10,13 @@ export default function About() {
     <section
       ref={ref}
       id="about"
-      className="relative mb-20 scroll-mt-28 px-2 sm:px-4"
+      className="relative mb-12 scroll-mt-16 px-2 sm:px-4"
     >
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative z-10 max-w-6xl mx-auto px-8 py-12 sm:px-14
+        className="relative z-10 max-w-6xl mx-auto px-6 py-8 sm:px-10
                   bg-gradient-to-br from-[#18182f]/90 via-[#18182f]/80 to-[#23234a]/90
                   dark:bg-gradient-to-br dark:from-[#18182f]/95 dark:via-[#18182f]/90 dark:to-[#23234a]/95
                   light:bg-gradient-to-br light:from-white/95 light:via-gray-50/90 light:to-blue-50/95
