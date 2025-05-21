@@ -7,6 +7,7 @@ import { useTheme } from "@/context/theme-context";
 import { ExperienceItem } from "@/lib/types";
 import SectionWrapper from "../layout/SectionWrapper";
 import Card from "../ui/cards/Card";
+import Image from "next/image";
 
 /**
  * ExperienceCard component to display individual experience items
@@ -49,11 +50,24 @@ function ExperienceCard({
       >
         <div className="p-5">
           <div className="flex items-start">
-            <div className="mr-3 flex items-center justify-center w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-900 shadow-sm">
-              <div className="text-blue-600 dark:text-blue-100 text-lg">
-                {item.icon}
+            {item.logo ? (
+              <div className="mr-3 flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 relative">
+                <Image
+                  src={item.logo}
+                  alt={`${item.location} logo`}
+                  fill
+                  style={{ objectFit: "contain", objectPosition: "center" }}
+                  sizes="48px"
+                  priority={index < 2}
+                />
               </div>
-            </div>
+            ) : (
+              <div className="mr-3 flex items-center justify-center w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-900 shadow-sm">
+                <div className="text-blue-600 dark:text-blue-100 text-lg">
+                  {item.icon}
+                </div>
+              </div>
+            )}
             
             <div className="flex-1">
               <div className="flex justify-between items-start">

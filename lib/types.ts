@@ -17,6 +17,7 @@ export interface ExperienceItem {
   icon: ReactNode;
   date: string;
   skills?: string[];
+  logo?: string; // Path to company logo
 }
 
 // Project section types

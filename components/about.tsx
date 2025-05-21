@@ -27,7 +27,7 @@ export default function About() {
         <div className="w-24 h-1 bg-blue-600 dark:bg-blue-500 mb-8 rounded-full mx-auto opacity-80"></div>
         
         <p className="mb-6 text-base sm:text-lg leading-relaxed text-center mx-auto max-w-4xl">
-          I'm <span className="font-semibold text-blue-700 dark:text-blue-400">Suhas</span> — An engineer with proven expertise in AI Research, Cloud-native Software Development, and Teaching Excellence.
+          I'm an engineer with proven expertise in AI Research, Cloud-native Software Development, and Teaching Excellence.
         </p>
 
         <div className="mt-8 space-y-6">

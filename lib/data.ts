@@ -11,6 +11,9 @@ import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import scorepointImg from "@/public/scorepoint.png";
+import northeasternLogo from "@/public/experience/northeastern.png";
+import safecastLogo from "@/public/experience/safecast.png";
+import runwayLogo from "@/public/experience/runway.png";
 
 // Type imports
 import { ExperienceItem, NavLink, ProjectItem, ResearchItem, SkillsData } from "./types";
@@ -62,6 +65,7 @@ export const experiencesData: ExperienceItem[] = [
     icon: React.createElement(FaBrain, {}),
     date: "January 2025 - Present",
     skills: ["Neural Networks", "LLMs", "RLHF", "PyTorch", "Research", "VR"],
+    logo: northeasternLogo.src,
   },
   {
     title: "Graduate Teaching Assistant",
@@ -77,6 +81,7 @@ export const experiencesData: ExperienceItem[] = [
     icon: React.createElement(LuGraduationCap, {}),
     date: "January 2025 - May 2025",
     skills: ["Teaching", "Data Science", "MLOps", "Mentoring"],
+    logo: northeasternLogo.src,
   },
   {
     title: "Cloud Engineer Intern",
@@ -93,6 +98,7 @@ export const experiencesData: ExperienceItem[] = [
     icon: React.createElement(FaLaptopCode, {}),
     date: "May 2024 - January 2025",
     skills: ["AWS", "Cloud Cost Optimization", "Infrastructure", "Documentation"],
+    logo: safecastLogo.src,
   },
   {
     title: "Software Engineer",
@@ -109,6 +115,7 @@ export const experiencesData: ExperienceItem[] = [
     skills: ["Python", "AWS", "Microservices", "RESTful APIs", "SQL", "CI/CD"],
     icon: React.createElement(CgWorkAlt, {}),
     date: "August 2022 - September 2023",
+    logo: runwayLogo.src,
   },
 ];
 
