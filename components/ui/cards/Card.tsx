@@ -49,15 +49,14 @@ export default function Card({
     <motion.div
       className={`relative overflow-hidden rounded-lg border ${
         theme === "light" 
-          ? "bg-white shadow-sm border-gray-200 hover:border-blue-300 hover:shadow-lg" 
-          : "bg-black border-gray-800 hover:border-blue-500/50 hover:bg-gray-800/90"
-      } transition-all duration-300 ${onClick ? "cursor-pointer" : ""} group ${className}`}
+          ? "bg-white shadow-sm border-gray-200"
+          : "bg-black border-gray-800"
+      } ${onClick ? "cursor-pointer" : ""} ${className}`}
       onClick={onClick}
       initial={initial}
       whileInView={whileInView}
       transition={transition}
       viewport={viewport}
-      whileHover={whileHover}
       layout={layout}
     >
       {children}

@@ -71,7 +71,7 @@ function ExperienceCard({
             <div className="flex-1">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-lg font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  <h3 className="text-lg font-semibold">
                     {item.title}
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-300 font-medium">
