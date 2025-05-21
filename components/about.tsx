@@ -1,86 +1,181 @@
 "use client";
 
-import React from "react";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
+import { AcademicCapIcon, CpuChipIcon, UsersIcon, TrophyIcon, ChevronRightIcon, BeakerIcon, CodeBracketIcon } from '@heroicons/react/24/solid';
+import { motion } from 'framer-motion';
 import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function About() {
-  const { ref } = useSectionInView("About");
-  
+  const { ref } = useSectionInView("About", 0.5);
   return (
-    <motion.section
+    <section
       ref={ref}
-      className="mb-16 max-w-[65rem] sm:mb-24 scroll-mt-28 px-4"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
       id="about"
+      className="relative mb-20 scroll-mt-28 px-2 sm:px-4"
     >
-      <SectionHeading className="mb-8 text-center text-gray-900 dark:text-white">
-        About Me
-      </SectionHeading>
-      
-      <div className="max-w-[60rem] mx-auto rounded-xl bg-white/60 dark:bg-black p-8 border border-gray-200 dark:border-gray-800/50 shadow-md">
-        {/* Subtle accent line */}
-        <div className="w-24 h-1 bg-blue-600 dark:bg-blue-500 mb-8 rounded-full mx-auto opacity-80"></div>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative z-10 max-w-6xl mx-auto px-8 py-12 sm:px-14
+                  bg-gradient-to-br from-[#18182f]/90 via-[#18182f]/80 to-[#23234a]/90
+                  dark:bg-gradient-to-br dark:from-[#18182f]/95 dark:via-[#18182f]/90 dark:to-[#23234a]/95
+                  light:bg-gradient-to-br light:from-white/95 light:via-gray-50/90 light:to-blue-50/95
+                  backdrop-blur-xl rounded-3xl
+                  shadow-[0_8px_48px_rgba(80,100,220,0.12)] dark:shadow-[0_8px_48px_rgba(50,80,200,0.15)]
+                  border border-white/10 dark:border-white/10 light:border-gray-200/60
+                  flex flex-col gap-10 overflow-hidden"
+      >
+        {/* Decorative elements with improved colors */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/10 light:bg-blue-400/5 rounded-full filter blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-400/10 dark:bg-indigo-500/10 light:bg-indigo-300/5 rounded-full filter blur-3xl -z-10 transform -translate-x-1/3 translate-y-1/4"></div>
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary-color/5 rounded-full filter blur-3xl -z-10 opacity-60 animate-pulse"></div>
         
-        <p className="mb-6 text-base sm:text-lg leading-relaxed text-center mx-auto max-w-4xl">
-          I'm an engineer with proven expertise in AI Research, Cloud-native Software Development, and Teaching Excellence.
-        </p>
+        {/* Headline with enhanced gradient */}
+        <motion.h2 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="text-2xl md:text-4xl font-extrabold tracking-tight text-left 
+                     bg-gradient-to-r from-indigo-600 via-blue-500 to-indigo-800 
+                     dark:bg-gradient-to-r dark:from-blue-400 dark:via-indigo-300 dark:to-blue-200 
+                     bg-clip-text text-transparent drop-shadow-sm mb-2 flex items-center gap-2"
+        >
+          Engineer. Researcher. Mentor.
+        </motion.h2>
 
-        <div className="mt-8 space-y-6">
-          <p className="mb-4 text-base sm:text-lg leading-relaxed text-gray-800 dark:text-gray-300">
-            I specialize in designing <span className="font-medium">intelligent, scalable software</span> that blends rigorous problem-solving with real-world application. With a background in <span className="font-medium">software engineering, data science, and machine learning</span>, I navigate across abstraction layers — from high-level design to low-level optimization.
-          </p>
+        {/* Compact bullet-pointed summary with improved colors */}
+        <ul className="flex flex-col gap-2 text-gray-300 dark:text-gray-200 light:text-gray-700 text-base md:text-lg leading-snug max-w-3xl text-left font-normal pl-1">
+          <motion.li 
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
+            className="flex items-start gap-2.5 group pl-1">
+            <span className="text-blue-500 dark:text-blue-400 light:text-blue-600 mt-1">
+              <ChevronRightIcon className="w-4 h-4" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">Proven expertise in AI research, cloud-native software, and teaching excellence.</span>
+          </motion.li>
+          <motion.li 
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            className="flex items-start gap-2.5 group pl-1">
+            <span className="text-blue-500 dark:text-blue-400 light:text-blue-600 mt-1">
+              <ChevronRightIcon className="w-4 h-4" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">Design intelligent, scalable software that blends rigorous problem-solving with real-world application.</span>
+          </motion.li>
+          <motion.li 
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
+            className="flex items-start gap-2.5 group pl-1">
+            <span className="text-blue-500 dark:text-blue-400 light:text-blue-600 mt-1">
+              <ChevronRightIcon className="w-4 h-4" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">Navigate across abstraction layers—from high-level design to low-level optimization.</span>
+          </motion.li>
+          <motion.li 
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.4 }}
+            className="flex items-start gap-2.5 group pl-1">
+            <span className="text-blue-500 dark:text-blue-400 light:text-blue-600 mt-1">
+              <ChevronRightIcon className="w-4 h-4" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">Analytical thinker: reduce complexity, build reliable solutions, and value clarity, efficiency, and continuous learning.</span>
+          </motion.li>
+        </ul>
 
-          <p className="text-base sm:text-lg leading-relaxed text-gray-800 dark:text-gray-300">
-            My approach is rooted in <span className="font-medium">analytical thinking</span>: understanding patterns, reducing complexity, and building reliable solutions that adapt and evolve. Whether working on <span className="font-medium">cloud-native architectures</span> or research-driven <span className="font-medium">AI systems</span>, I value clarity, efficiency, and continuous learning.
-          </p>
-        </div>
-      </div>
-    </motion.section>
+        {/* Achievements section header */}
+        <h3 className="text-xl font-bold text-gray-100 dark:text-gray-50 light:text-gray-800 mt-1 text-left border-l-4 border-primary-color pl-3 py-1">Highlights</h3>
+        {/* Enhanced two-column grid for highlights with animations and hover effects */}
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 w-full max-w-3xl text-left mt-1">
+          <motion.li 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
+            className="flex items-center gap-3 text-gray-100 dark:text-gray-50 light:text-gray-700 text-base font-medium group">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg 
+                           bg-gradient-to-br from-blue-500/90 to-blue-700/90 
+                           shadow-md border border-blue-400/20 
+                           group-hover:shadow-blue-500/20 group-hover:scale-110 transition-all duration-300">
+              <CpuChipIcon className="w-4 h-4 text-white" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">3+ years shipping backend/data systems</span>
+          </motion.li>
+          
+          <motion.li 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            className="flex items-center gap-3 text-gray-100 dark:text-gray-50 light:text-gray-700 text-base font-medium group">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg 
+                           bg-gradient-to-br from-indigo-500/90 to-indigo-700/90 
+                           shadow-md border border-indigo-400/20 
+                           group-hover:shadow-indigo-500/20 group-hover:scale-110 transition-all duration-300">
+              <AcademicCapIcon className="w-4 h-4 text-white" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">Cloud Certified (AWS SAA + CP)</span>
+          </motion.li>
+          
+          <motion.li 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
+            className="flex items-center gap-3 text-gray-100 dark:text-gray-50 light:text-gray-700 text-base font-medium group">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg 
+                           bg-gradient-to-br from-blue-400/90 to-indigo-600/90 
+                           shadow-md border border-blue-300/20 
+                           group-hover:shadow-blue-400/20 group-hover:scale-110 transition-all duration-300">
+              <BeakerIcon className="w-4 h-4 text-white" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">Led LLM alignment research at Northeastern</span>
+          </motion.li>
+          
+          <motion.li 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.4 }}
+            className="flex items-center gap-3 text-gray-100 dark:text-gray-50 light:text-gray-700 text-base font-medium group">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg 
+                           bg-gradient-to-br from-blue-500/90 to-indigo-500/90 
+                           shadow-md border border-indigo-400/20 
+                           group-hover:shadow-indigo-500/20 group-hover:scale-110 transition-all duration-300">
+              <TrophyIcon className="w-4 h-4 text-white" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">Hackathon winner | AiXplain 2024</span>
+          </motion.li>
+          
+          <motion.li 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.4 }}
+            className="flex items-center gap-3 text-gray-100 dark:text-gray-50 light:text-gray-700 text-base font-medium group">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg 
+                           bg-gradient-to-br from-indigo-500/90 to-blue-600/90 
+                           shadow-md border border-blue-400/20 
+                           group-hover:shadow-blue-500/20 group-hover:scale-110 transition-all duration-300">
+              <UsersIcon className="w-4 h-4 text-white" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">40+ students mentored as Teaching Assistant</span>
+          </motion.li>
+          
+          <motion.li 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.4 }}
+            className="flex items-center gap-3 text-gray-100 dark:text-gray-50 light:text-gray-700 text-base font-medium group">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg 
+                           bg-gradient-to-br from-blue-600/90 to-indigo-500/90 
+                           shadow-md border border-blue-400/20 
+                           group-hover:shadow-indigo-500/20 group-hover:scale-110 transition-all duration-300">
+              <CodeBracketIcon className="w-4 h-4 text-white" />
+            </span>
+            <span className="group-hover:text-blue-500 dark:group-hover:text-blue-400 light:group-hover:text-blue-700 transition-colors">Full-stack development experience</span>
+          </motion.li>
+        </ul>
+      </motion.div>
+    </section>
   );
 }
-
-//     <motion.section
-//   ref={ref}
-//   className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
-//   initial={{ opacity: 0, y: 100 }}
-//   animate={{ opacity: 1, y: 0 }}
-//   transition={{ delay: 0.175 }}
-//   id="about"
-// >
-//   <SectionHeading className="text-4xl font-bold text-gray-200 mb-6">
-//     About Me
-//   </SectionHeading>
-//   <p className="mb-4 text-lg text-gray-300 leading-relaxed">
-//     I am an{" "}
-//     <span className="font-semibold text-white">AI/ML Engineer and Cloud Solutions Architect</span> 
-//     with over three years of experience. I specialize in building{" "}
-//     <span className="font-semibold text-white">intelligent, scalable systems</span> using{" "}
-//     <span className="font-semibold text-white">
-//       AWS, React, Python, and Spring Boot
-//     </span>. My expertise includes{" "}
-//     <span className="font-semibold text-white">
-//       serverless architectures, AI-powered solutions, and cloud optimization
-//     </span>{" "}
-//     to solve real-world challenges efficiently. Passionate about{" "}
-//     <span className="italic text-gray-400">knowledge-sharing and community-building</span>, 
-//     I enjoy mentoring aspiring professionals and hosting tech meetups.
-//   </p>
-//   <p className="text-lg text-gray-300 leading-relaxed">
-//     <span className="italic text-gray-400">When I'm not coding</span>, 
-//     I enjoy diving into{" "}
-//     <span className="font-semibold text-white">Cognitive Science, Sociology, History, and Philosophy</span>, 
-//     broadening my perspective to fuel innovation and creativity. 
-//     I'm always eager to connect with like-minded individuals and collaborate on exciting opportunities.{" "}
-//     <span className="font-semibold text-gray-200">Let's build something extraordinary together!</span>
-//   </p>
-// </motion.section>
-
-
-
-//   );
-// }

@@ -30,10 +30,12 @@ export default function Header() {
             >
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 hover:text-blue-600 dark:hover:text-blue-300 transition",
+                  "flex w-full items-center justify-center px-3 py-3 transition-all duration-300",
                   {
                     "text-blue-700 dark:text-white font-semibold":
                       activeSection === link.name,
+                    "text-gray-700 dark:text-white/90 hover:text-blue-600 dark:hover:text-blue-300":
+                      activeSection !== link.name,
                   }
                 )}
                 href={link.hash}
@@ -53,7 +55,7 @@ export default function Header() {
                       stiffness: 380,
                       damping: 30,
                     }}
-                  ></motion.span>
+                  />
                 )}
               </Link>
             </motion.li>

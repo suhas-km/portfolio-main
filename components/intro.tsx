@@ -112,7 +112,6 @@ export default function Intro() {
               transition={{ delay: 0.5 }}
             >
               <p className="text-lg md:text-xl mb-4">Transforming complex challenges into elegant solutions across AI, software engineering, and cloud infrastructure</p>
-              <p className="text-lg md:text-xl">Passionate about building innovative technologies that create meaningful impact in our increasingly digital world</p>
             </motion.div>
             
             <motion.div
