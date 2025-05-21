@@ -47,7 +47,7 @@ export default function Skills() {
         Skills
       </SectionHeading>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[60rem] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-[60rem] mx-auto w-full px-2 sm:px-4 md:px-6 xl:px-8">
         {Object.entries(skillsData).map(([category, skills]) => {
           const { from, to, shadow } = getCategoryColors(category);
           return (

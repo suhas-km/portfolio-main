@@ -189,9 +189,9 @@ export default function Intro() {
         </div>
       </div>
       
-      {/* Simple Scroll Down Indicator - Positioned better */}
+      {/* Simple Scroll Down Indicator - Responsive */}
       <motion.div 
-        className="absolute bottom-16 left-0 right-0 flex justify-center z-10"
+        className="absolute left-0 right-0 flex justify-center z-10 bottom-10 sm:bottom-16"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
@@ -204,10 +204,10 @@ export default function Intro() {
             setTimeOfLastClick(Date.now());
           }}
         >
-          <span className="text-base font-medium text-gray-600 dark:text-gray-300 mb-2">Scroll Down</span>
+          <span className="text-base sm:text-base font-medium text-gray-600 dark:text-gray-300 mb-2">Scroll Down</span>
           <motion.div
-            className="w-8 h-8 rounded-full flex items-center justify-center bg-blue-600 text-white"
-            animate={{ y: [0, 6, 0] }}
+            className="w-10 h-10 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-blue-600 text-white"
+            animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
             <svg
@@ -216,7 +216,7 @@ export default function Intro() {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-4 h-4"
+              className="w-6 h-6 sm:w-4 sm:h-4"
             >
               <path
                 strokeLinecap="round"

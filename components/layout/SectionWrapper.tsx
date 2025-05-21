@@ -40,7 +40,7 @@ export default function SectionWrapper({
     <section
       id={id}
       ref={ref}
-      className={`scroll-mt-28 mb-16 sm:mb-24 max-w-5xl mx-auto px-4 sm:px-8 ${className}`}
+      className={`scroll-mt-28 mb-16 sm:mb-24 max-w-full px-2 sm:max-w-5xl sm:px-4 xl:max-w-6xl xl:px-8 mx-auto ${className}`}
     >
       <SectionHeading className="mb-8 text-center text-gray-900 dark:text-white">
         {title}
