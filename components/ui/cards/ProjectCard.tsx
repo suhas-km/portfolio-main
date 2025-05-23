@@ -36,9 +36,9 @@ export default function ProjectCard({
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   // Based on the image, determine the specific layout for each project by title
-  const shouldBeVertical = title.includes("QueryMaster") || title.includes("Nutrition");
+  const shouldBeVertical = title.includes("QueryMaster") || title.includes("Nutrition") || title.includes("AlignAI");
   // For horizontal layouts, determine which side the image should be on
-  const isImageOnLeft = title.includes("SafeHouse"); // SafeHouse has image on left, MatchPoint has image on right
+  const isImageOnLeft = title.includes("SafeHouse") || title.includes("AlignAI"); // SafeHouse and AlignAI have image on left, MatchPoint has image on right
   
   /**
    * Helper function to determine optimal image positioning based on content
@@ -48,6 +48,7 @@ export default function ProjectCard({
     if (title.includes("SafeHouse")) return "center center"; 
     if (title.includes("MatchPoint")) return "center 30%";
     if (title.includes("Nutrition")) return "center center";
+    if (title.includes("AlignAI")) return "center 25%";
     return "center center";
   };
   

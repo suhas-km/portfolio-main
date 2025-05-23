@@ -11,6 +11,7 @@ import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import scorepointImg from "@/public/scorepoint.png";
+import alignaiImg from "@/public/alignai.png";
 import northeasternLogo from "@/public/experience/northeastern.png";
 import safecastLogo from "@/public/experience/safecast.png";
 import runwayLogo from "@/public/experience/runway.png";
@@ -120,6 +121,14 @@ export const experiencesData: ExperienceItem[] = [
 ];
 
 export const projectsData = [
+  {
+    title: "AlignAI",
+    description:
+      "Developed an AI alignment platform that improves LLM outputs through RLHF and advanced reward modeling, increasing response quality by 32%.",
+    tags: ["PyTorch", "RLHF", "Reward Modeling", "Transformers", "Fine-tuning"],
+    imageUrl: alignaiImg,
+    githubUrl: "https://github.com/suhas-km/AlignAI"
+  },
   {
     title: "QueryMaster AI",
     description:
