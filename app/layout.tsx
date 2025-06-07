@@ -8,6 +8,24 @@ import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import { Metadata } from "next";
 
+// Initialize OpenTelemetry in production
+if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_OTEL_ENABLED === 'true') {
+  // Only import and initialize on the server side
+  if (typeof window === 'undefined') {
+    try {
+      require('./instrumentation.node');
+    } catch (error) {
+      console.error('Failed to initialize server-side OpenTelemetry:', error);
+    }
+  } else {
+    try {
+      require('./instrumentation');
+    } catch (error) {
+      console.error('Failed to initialize client-side OpenTelemetry:', error);
+    }
+  }
+}
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

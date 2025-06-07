@@ -14,7 +14,15 @@ const nextConfig = {
   },
   experimental: {
     serverActions: true,
+    instrumentationHook: true,
   },
+  output: 'standalone',
 };
 
-module.exports = nextConfig;
+// Only apply OpenTelemetry in production
+if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_OTEL_ENABLED === 'true') {
+  const { withOtel } = require('@vercel/otel');
+  module.exports = withOtel(nextConfig);
+} else {
+  module.exports = nextConfig;
+}
