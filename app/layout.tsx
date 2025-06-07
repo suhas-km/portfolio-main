@@ -12,12 +12,9 @@ import { Metadata } from "next";
 if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_OTEL_ENABLED === 'true') {
   // Only import and initialize on the server side
   if (typeof window === 'undefined') {
-    try {
-      require('./instrumentation.node');
-    } catch (error) {
-      console.error('Failed to initialize server-side OpenTelemetry:', error);
-    }
+    // Server-side initialization is handled by the instrumentation hook
   } else {
+    // Client-side initialization
     try {
       require('./instrumentation');
     } catch (error) {

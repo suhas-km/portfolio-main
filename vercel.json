@@ -7,6 +7,14 @@
     }
   },
   "env": {
-    "NEXT_PUBLIC_OTEL_ENABLED": "true"
-  }
+    "NEXT_PUBLIC_OTEL_ENABLED": "true",
+    "OTEL_SERVICE_NAME": "portfolio",
+    "OTEL_EXPORTER_OTLP_ENDPOINT": "https://api.honeycomb.io/v1/traces",
+    "OTEL_EXPORTER_OTLP_HEADERS": "x-honeycomb-team=your-api-key-here",
+    "OTEL_PROPAGATORS": "tracecontext,baggage",
+    "OTEL_TRACES_SAMPLER": "parentbased_always_on"
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs"
 }
